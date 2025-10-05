@@ -1,0 +1,958 @@
+{
+  "cities": [
+    {
+      "id": "1",
+      "name": "London",
+      "image_url": "/cities/london.jpg",
+      "postal_code": "SW1A",
+      "location": {
+        "latitude": 51.5074,
+        "longitude": -0.1278
+      }
+    },
+    {
+      "id": "2",
+      "name": "Manchester",
+      "image_url": "/cities/Manchester.jpg",
+      "postal_code": "M1",
+      "location": {
+        "latitude": 53.4808,
+        "longitude": -2.2426
+      }
+    },
+    {
+      "id": "3",
+      "name": "Birkenhead",
+      "image_url": "/cities/Birkenhead.jpg",
+      "postal_code": "B1",
+      "location": {
+        "latitude": 52.4862,
+        "longitude": -1.8904
+      }
+    },
+    {
+      "id": "4",
+      "name": "Liverpool",
+      "image_url": "/cities/Liverpool.jpg",
+      "postal_code": "L1",
+      "location": {
+        "latitude": 53.4084,
+        "longitude": -2.9916
+      }
+    },
+    {
+      "id": "5",
+      "name": "Cardiff",
+      "image_url": "/cities/Cardiff.jpg",
+      "postal_code": "CF10",
+      "location": {
+        "latitude": 51.4816,
+        "longitude": -3.1791
+      }
+    },
+    {
+      "id": "6",
+      "name": "Glasgow",
+      "image_url": "/cities/Glasgow.jpg",
+      "postal_code": "G1",
+      "location": {
+        "latitude": 55.8642,
+        "longitude": -4.2518
+      }
+    },
+    {
+      "id": "7",
+      "name": "Bristol",
+      "image_url": "/cities/Bristol.jpg",
+      "postal_code": "BS1",
+      "location": {
+        "latitude": 51.4545,
+        "longitude": -2.5879
+      }
+    },
+    {
+      "id": "8",
+      "name": "Copenhagen",
+      "image_url": "/cities/Copenhagen.jpg",
+      "postal_code": "1050",
+      "location": {
+        "latitude": 55.6761,
+        "longitude": 12.5683
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Ahmed Mohamed",
+      "email": "ahmed@example.com",
+      "phone": "01000000000",
+      "avatar_url": "/avatars/ahmed.jpg",
+      "isHost": true,
+      "favorites": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Mona Abdallah",
+      "email": "mona@example.com",
+      "phone": "01100000000",
+      "avatar_url": "/avatars/mona.jpg",
+      "isHost": false,
+      "favorites": [
+        1,
+        4
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Sami Ali",
+      "email": "sami@example.com",
+      "phone": "01234567890",
+      "avatar_url": "/avatars/sami.jpg",
+      "isHost": true,
+      "favorites": []
+    },
+    {
+      "id": "4",
+      "name": "Laila Hassan",
+      "email": "layla@example.com",
+      "phone": "01500000000",
+      "avatar_url": "/avatars/layla.jpg",
+      "isHost": false,
+      "favorites": [
+        3,
+        5
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Mohamed Sami",
+      "email": "mhamad@example.com",
+      "phone": "0145555555",
+      "avatar_url": "/avatars/mhamad.jpg",
+      "isHost": true,
+      "favorites": [
+        1,
+        2,
+        5
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Fatma Elzahraa",
+      "email": "fatma@example.com",
+      "phone": "0160000000",
+      "avatar_url": "/avatars/fatma.jpg",
+      "isHost": false,
+      "favorites": [
+        6,
+        7
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Youssef Ibrahim",
+      "email": "youssef@example.com",
+      "phone": "0170000000",
+      "avatar_url": "/avatars/youssef.jpg",
+      "isHost": true,
+      "favorites": [
+        8
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Reem Ahmed",
+      "email": "reem@example.com",
+      "phone": "0180000000",
+      "avatar_url": "/avatars/reem.jpg",
+      "isHost": false,
+      "favorites": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Karim Youssef",
+      "email": "karim@example.com",
+      "phone": "0190000000",
+      "avatar_url": "/avatars/karim.jpg",
+      "isHost": false,
+      "favorites": []
+    },
+    {
+      "id": "10",
+      "name": "Nada Ali",
+      "email": "nada@example.com",
+      "phone": "0200000000",
+      "avatar_url": "/avatars/nada.jpg",
+      "isHost": true,
+      "favorites": [
+        4
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "id": "1",
+      "title": "Luxury Apartment in London",
+      "description": "Modern apartment with three bedrooms close to London's landmarks.",
+      "city_id": 1,
+      "address": "221B Baker Street, London",
+      "location": {
+        "latitude": 51.5237,
+        "longitude": -0.1585
+      },
+      "price_per_night": 150,
+      "max_guests": 4,
+      "images": [
+        "/properties/1/01.jpg",
+        "/properties/1/02.jpg",
+        "/properties/1/03.jpg"
+      ],
+      "host_id": 1,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Air Conditioning",
+        "Parking",
+        "Smart TV"
+      ],
+      "review": {
+        "rating": 4.7,
+        "comment": "Beautiful apartment in a great location, very comfortable stay."
+      }
+    },
+    {
+      "id": "2",
+      "title": "Quiet Family House in Manchester",
+      "description": "Spacious family home in the heart of Manchester with a lovely garden.",
+      "city_id": 2,
+      "address": "15 Digby Street, Manchester",
+      "location": {
+        "latitude": 53.479,
+        "longitude": -2.244
+      },
+      "price_per_night": 120,
+      "max_guests": 6,
+      "images": [
+        "/properties/2/01.jpg",
+        "/properties/2/02.jpg"
+      ],
+      "host_id": 1,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Heating",
+        "Garden"
+      ],
+      "review": {
+        "rating": 4.4,
+        "comment": "Perfect home for a family, very peaceful and well equipped."
+      }
+    },
+    {
+      "id": "3",
+      "title": "Contemporary Apartment in Birkenhead",
+      "description": "Elegant apartment with city views, suitable for couples and small families.",
+      "city_id": 3,
+      "address": "5 King Street, Birkenhead",
+      "location": {
+        "latitude": 52.4895,
+        "longitude": -1.8986
+      },
+      "price_per_night": 100,
+      "max_guests": 3,
+      "images": [
+        "/properties/3/01.jpg",
+        "/properties/3/02.jpg"
+      ],
+      "host_id": 3,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Air Conditioning"
+      ],
+      "review": {
+        "rating": 4.5,
+        "comment": "Lovely apartment with great views and modern amenities."
+      }
+    },
+    {
+      "id": "4",
+      "title": "Historic House in Liverpool",
+      "description": "Historic house with luxurious interior and large garden.",
+      "city_id": 4,
+      "address": "20 Marylebone Street, Liverpool",
+      "location": {
+        "latitude": 53.4064,
+        "longitude": -2.9787
+      },
+      "price_per_night": 180,
+      "max_guests": 5,
+      "images": [
+        "/properties/4/01.jpg",
+        "/properties/4/02.jpg"
+      ],
+      "host_id": 3,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Parking",
+        "Garden",
+        "Smart TV"
+      ],
+      "review": {
+        "rating": 4.8,
+        "comment": "A truly charming house with lovely decor and ample space."
+      }
+    },
+    {
+      "id": "5",
+      "title": "Charming Apartment in Cardiff",
+      "description": "Comfortable stay with a beautiful sea atmosphere near Cardiff city center.",
+      "city_id": 5,
+      "address": "12 Sea Street, Cardiff",
+      "location": {
+        "latitude": 51.4816,
+        "longitude": -3.1791
+      },
+      "price_per_night": 130,
+      "max_guests": 4,
+      "images": [
+        "/properties/5/01.jpg",
+        "/properties/5/02.jpg"
+      ],
+      "host_id": 5,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Air Conditioning",
+        "Near Beach"
+      ],
+      "review": {
+        "rating": 4.6,
+        "comment": "Cozy and near the beach, perfect for a relaxing holiday."
+      }
+    },
+    {
+      "id": "6",
+      "title": "Elegant Apartment in Glasgow",
+      "description": "Spacious apartment with the latest facilities in the heart of Glasgow.",
+      "city_id": 6,
+      "address": "100 Queen Street, Glasgow",
+      "location": {
+        "latitude": 55.8642,
+        "longitude": -4.2518
+      },
+      "price_per_night": 140,
+      "max_guests": 5,
+      "images": [
+        "/properties/6/01.jpg",
+        "/properties/6/02.jpg"
+      ],
+      "host_id": 7,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Air Conditioning",
+        "Parking"
+      ],
+      "review": {
+        "rating": 4.7,
+        "comment": "Elegant and well located apartment with all necessary comforts."
+      }
+    },
+    {
+      "id": "7",
+      "title": "Family House in Bristol",
+      "description": "Family home with private garden in Bristol.",
+      "city_id": 7,
+      "address": "52 Mary Street, Bristol",
+      "location": {
+        "latitude": 51.4545,
+        "longitude": -2.5879
+      },
+      "price_per_night": 110,
+      "max_guests": 6,
+      "images": [
+        "/properties/7/01.jpg",
+        "/properties/7/02.jpg"
+      ],
+      "host_id": 6,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Garden",
+        "Heating"
+      ],
+      "review": {
+        "rating": 4.3,
+        "comment": "Great family house, plenty of space for children and outdoor activities."
+      }
+    },
+    {
+      "id": "8",
+      "title": "Modern Apartment in Copenhagen",
+      "description": "Stylish apartment in central Copenhagen near main markets.",
+      "city_id": 8,
+      "address": "12 Store Street, Copenhagen",
+      "location": {
+        "latitude": 55.6761,
+        "longitude": 12.5683
+      },
+      "price_per_night": 160,
+      "max_guests": 4,
+      "images": [
+        "/properties/8/01.jpg",
+        "/properties/8/02.jpg"
+      ],
+      "host_id": 7,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Parking",
+        "Smart TV"
+      ],
+      "review": {
+        "rating": 4.7,
+        "comment": "Stylish apartment in the heart of the city, very convenient location."
+      }
+    },
+    {
+      "id": "9",
+      "title": "Luxury Villa in London",
+      "description": "Luxurious villa with private pool and large garden.",
+      "city_id": 1,
+      "address": "45 Park Street, London",
+      "location": {
+        "latitude": 51.501,
+        "longitude": -0.142
+      },
+      "price_per_night": 400,
+      "max_guests": 8,
+      "images": [
+        "/properties/9/01.jpg",
+        "/properties/9/02.jpg"
+      ],
+      "host_id": 5,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Parking",
+        "Pool"
+      ],
+      "review": {
+        "rating": 4.9,
+        "comment": "Spectacular villa, perfect for large groups, amazing pool and garden."
+      }
+    },
+    {
+      "id": "10",
+      "title": "Small Apartment in Manchester",
+      "description": "Shaded and quiet apartment suitable for solo travelers.",
+      "city_id": 2,
+      "address": "21 River Street, Manchester",
+      "location": {
+        "latitude": 53.48,
+        "longitude": -2.248
+      },
+      "price_per_night": 80,
+      "max_guests": 1,
+      "images": [
+        "/properties/10/01.jpg",
+        "/properties/10/02.jpg"
+      ],
+      "host_id": 6,
+      "amenities": [
+        "WiFi",
+        "Kitchen"
+      ],
+      "review": {
+        "rating": 4.2,
+        "comment": "Quiet small apartment, ideal for solo travelers."
+      }
+    },
+    {
+      "id": "11",
+      "title": "Bright Apartment in Birkenhead",
+      "description": "Bright apartment with balcony overlooking the city.",
+      "city_id": 3,
+      "address": "10 Sun Street, Birkenhead",
+      "location": {
+        "latitude": 52.49,
+        "longitude": -1.9
+      },
+      "price_per_night": 95,
+      "max_guests": 3,
+      "images": [
+        "/properties/11/01.jpg",
+        "/properties/11/02.jpg"
+      ],
+      "host_id": 3,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Air Conditioning"
+      ],
+      "review": {
+        "rating": 4.4,
+        "comment": "Bright and airy apartment with a great city view."
+      }
+    },
+    {
+      "id": "12",
+      "title": "Countryside Home in Liverpool",
+      "description": "Quiet home outside the city with beautiful natural scenery.",
+      "city_id": 4,
+      "address": "5 Countryside Road, Liverpool",
+      "location": {
+        "latitude": 53.41,
+        "longitude": -3
+      },
+      "price_per_night": 140,
+      "max_guests": 4,
+      "images": [
+        "/properties/12/01.jpg",
+        "/properties/12/02.jpg"
+      ],
+      "host_id": 8,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Garden",
+        "Parking"
+      ],
+      "review": {
+        "rating": 4.6,
+        "comment": "Peaceful countryside home with beautiful surroundings."
+      }
+    },
+    {
+      "id": "13",
+      "title": "Sea Apartment in Cardiff",
+      "description": "Apartment close to the sea with a wonderful view.",
+      "city_id": 5,
+      "address": "20 Sea Street, Cardiff",
+      "location": {
+        "latitude": 51.483,
+        "longitude": -3.18
+      },
+      "price_per_night": 150,
+      "max_guests": 4,
+      "images": [
+        "/properties/13/01.jpg",
+        "/properties/13/02.jpg"
+      ],
+      "host_id": 5,
+      "amenities": [
+        "WiFi",
+        "Air Conditioning",
+        "Near Beach"
+      ],
+      "review": {
+        "rating": 4.7,
+        "comment": "Lovely sea view apartment close to central Cardiff."
+      }
+    },
+    {
+      "id": "14",
+      "title": "Contemporary House in Glasgow",
+      "description": "Modern house with elegant furniture and private garden.",
+      "city_id": 6,
+      "address": "105 Queen Street, Glasgow",
+      "location": {
+        "latitude": 55.865,
+        "longitude": -4.252
+      },
+      "price_per_night": 220,
+      "max_guests": 5,
+      "images": [
+        "/properties/14/01.jpg",
+        "/properties/14/02.jpg"
+      ],
+      "host_id": 7,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Parking",
+        "Heating"
+      ],
+      "review": {
+        "rating": 4.5,
+        "comment": "Modern house with great style and garden."
+      }
+    },
+    {
+      "id": "15",
+      "title": "Villa in Bristol",
+      "description": "Luxurious villa with pool and large garden.",
+      "city_id": 7,
+      "address": "60 Mary Street, Bristol",
+      "location": {
+        "latitude": 51.455,
+        "longitude": -2.588
+      },
+      "price_per_night": 300,
+      "max_guests": 7,
+      "images": [
+        "/properties/15/01.jpg",
+        "/properties/15/02.jpg"
+      ],
+      "host_id": 6,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Parking",
+        "Pool"
+      ],
+      "review": {
+        "rating": 4.8,
+        "comment": "Stunning villa with pool, perfect for groups."
+      }
+    },
+    {
+      "id": "16",
+      "title": "Cozy Studio in London",
+      "description": "Comfortable studio apartment close to central London.",
+      "city_id": 1,
+      "address": "12 Central Street, London",
+      "location": {
+        "latitude": 51.509,
+        "longitude": -0.134
+      },
+      "price_per_night": 75,
+      "max_guests": 2,
+      "images": [
+        "/properties/16/01.jpg",
+        "/properties/16/02.jpg"
+      ],
+      "host_id": 1,
+      "amenities": [
+        "WiFi",
+        "Heating"
+      ],
+      "review": {
+        "rating": 4.1,
+        "comment": "Cozy studio perfect for short stays."
+      }
+    },
+    {
+      "id": "17",
+      "title": "City Apartment in Manchester",
+      "description": "Modern apartment located near Manchester city center.",
+      "city_id": 2,
+      "address": "30 King Street, Manchester",
+      "location": {
+        "latitude": 53.483,
+        "longitude": -2.244
+      },
+      "price_per_night": 110,
+      "max_guests": 3,
+      "images": [
+        "/properties/17/01.jpg",
+        "/properties/17/02.jpg"
+      ],
+      "host_id": 5,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Heating"
+      ],
+      "review": {
+        "rating": 4.3,
+        "comment": "Modern apartment with great location."
+      }
+    },
+    {
+      "id": "18",
+      "title": "Family Home in Birkenhead",
+      "description": "Spacious family home with garden and parking.",
+      "city_id": 3,
+      "address": "22 High Street, Birkenhead",
+      "location": {
+        "latitude": 52.491,
+        "longitude": -1.895
+      },
+      "price_per_night": 180,
+      "max_guests": 7,
+      "images": [
+        "/properties/18/01.jpg",
+        "/properties/18/02.jpg"
+      ],
+      "host_id": 3,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Parking",
+        "Garden"
+      ],
+      "review": {
+        "rating": 4.6,
+        "comment": "Perfect family home with garden and parking."
+      }
+    },
+    {
+      "id": "19",
+      "title": "Luxury Apartment in Liverpool",
+      "description": "Luxury apartment with river views and modern amenities.",
+      "city_id": 4,
+      "address": "100 River Road, Liverpool",
+      "location": {
+        "latitude": 53.409,
+        "longitude": -2.98
+      },
+      "price_per_night": 220,
+      "max_guests": 4,
+      "images": [
+        "/properties/19/01.jpg",
+        "/properties/19/02.jpg"
+      ],
+      "host_id": 8,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Parking",
+        "Smart TV"
+      ],
+      "review": {
+        "rating": 4.7,
+        "comment": "Luxurious stay with beautiful river views."
+      }
+    },
+    {
+      "id": "20",
+      "title": "Beachfront Apartment in Cardiff",
+      "description": "Beautiful apartment directly on the beach with stunning views.",
+      "city_id": 5,
+      "address": "5 Beachfront Ave, Cardiff",
+      "location": {
+        "latitude": 51.482,
+        "longitude": -3.177
+      },
+      "price_per_night": 250,
+      "max_guests": 5,
+      "images": [
+        "/properties/20/01.jpg",
+        "/properties/20/02.jpg"
+      ],
+      "host_id": 5,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Air Conditioning",
+        "Beach Access"
+      ],
+      "review": {
+        "rating": 4.9,
+        "comment": "Amazing beachfront apartment with fantastic views."
+      }
+    }
+  ],
+  "bookings": [
+    {
+      "id": "1",
+      "property_id": 1,
+      "user_id": 2,
+      "start_date": "2025-09-01",
+      "end_date": "2025-09-05",
+      "total_price": 600,
+      "status": "confirmed"
+    },
+    {
+      "id": "2",
+      "property_id": 3,
+      "user_id": 1,
+      "start_date": "2025-10-10",
+      "end_date": "2025-10-15",
+      "total_price": 500,
+      "status": "pending"
+    },
+    {
+      "id": "3",
+      "property_id": 5,
+      "user_id": 4,
+      "start_date": "2025-11-01",
+      "end_date": "2025-11-07",
+      "total_price": 910,
+      "status": "confirmed"
+    },
+    {
+      "id": "4",
+      "property_id": 7,
+      "user_id": 9,
+      "start_date": "2025-12-01",
+      "end_date": "2025-12-10",
+      "total_price": 1100,
+      "status": "confirmed"
+    },
+    {
+      "id": "5",
+      "property_id": 10,
+      "user_id": 6,
+      "start_date": "2025-11-20",
+      "end_date": "2025-11-25",
+      "total_price": 400,
+      "status": "confirmed"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "property_id": 1,
+      "user_id": 2,
+      "rating": 5,
+      "comment": "Wonderful and clean stay, the place was excellent.",
+      "date": "2025-09-06"
+    },
+    {
+      "id": "2",
+      "property_id": 4,
+      "user_id": 1,
+      "rating": 4,
+      "comment": "Beautiful house and comfortable atmosphere, but the road is a bit crowded.",
+      "date": "2025-09-15"
+    },
+    {
+      "id": "3",
+      "property_id": 5,
+      "user_id": 4,
+      "rating": 5,
+      "comment": "Excellent location and very comfortable stay.",
+      "date": "2025-11-08"
+    },
+    {
+      "id": "4",
+      "property_id": 7,
+      "user_id": 9,
+      "rating": 4,
+      "comment": "Comfortable home and friendly host.",
+      "date": "2025-12-11"
+    },
+    {
+      "id": "5",
+      "property_id": 10,
+      "user_id": 6,
+      "rating": 3,
+      "comment": "Good place but needs minor maintenance.",
+      "date": "2025-11-26"
+    }
+  ],
+  "favorites": [
+    {
+      "id": "2",
+      "title": "Quiet Family House in Manchester",
+      "description": "Spacious family home in the heart of Manchester with a lovely garden.",
+      "city_id": 2,
+      "address": "15 Digby Street, Manchester",
+      "location": {
+        "latitude": 53.479,
+        "longitude": -2.244
+      },
+      "price_per_night": 120,
+      "max_guests": 6,
+      "images": [
+        "/properties/2/01.jpg",
+        "/properties/2/02.jpg"
+      ],
+      "host_id": 1,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Heating",
+        "Garden"
+      ],
+      "review": {
+        "rating": 4.4,
+        "comment": "Perfect home for a family, very peaceful and well equipped."
+      }
+    },
+    {
+      "id": "3",
+      "title": "Contemporary Apartment in Birkenhead",
+      "description": "Elegant apartment with city views, suitable for couples and small families.",
+      "city_id": 3,
+      "address": "5 King Street, Birkenhead",
+      "location": {
+        "latitude": 52.4895,
+        "longitude": -1.8986
+      },
+      "price_per_night": 100,
+      "max_guests": 3,
+      "images": [
+        "/properties/3/01.jpg",
+        "/properties/3/02.jpg"
+      ],
+      "host_id": 3,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Air Conditioning"
+      ],
+      "review": {
+        "rating": 4.5,
+        "comment": "Lovely apartment with great views and modern amenities."
+      }
+    },
+    {
+      "id": "12",
+      "title": "Countryside Home in Liverpool",
+      "description": "Quiet home outside the city with beautiful natural scenery.",
+      "city_id": 4,
+      "address": "5 Countryside Road, Liverpool",
+      "location": {
+        "latitude": 53.41,
+        "longitude": -3
+      },
+      "price_per_night": 140,
+      "max_guests": 4,
+      "images": [
+        "/properties/12/01.jpg",
+        "/properties/12/02.jpg"
+      ],
+      "host_id": 8,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Garden",
+        "Parking"
+      ],
+      "review": {
+        "rating": 4.6,
+        "comment": "Peaceful countryside home with beautiful surroundings."
+      }
+    },
+    {
+      "id": "14",
+      "title": "Contemporary House in Glasgow",
+      "description": "Modern house with elegant furniture and private garden.",
+      "city_id": 6,
+      "address": "105 Queen Street, Glasgow",
+      "location": {
+        "latitude": 55.865,
+        "longitude": -4.252
+      },
+      "price_per_night": 220,
+      "max_guests": 5,
+      "images": [
+        "/properties/14/01.jpg",
+        "/properties/14/02.jpg"
+      ],
+      "host_id": 7,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Parking",
+        "Heating"
+      ],
+      "review": {
+        "rating": 4.5,
+        "comment": "Modern house with great style and garden."
+      }
+    }
+  ]
+}

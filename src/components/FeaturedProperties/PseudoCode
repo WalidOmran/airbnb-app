@@ -1,0 +1,19 @@
+/** 
+         * ***** Pseudo code for add item Favorite *****
+         
+        
+        * we will use useState for management isFavorite , useReducer hook for management favoritesState and useContext for global state management 
+          - the Actions for favoritesReducer : GET_FAVORITES ,  ADD_TO_FAVORITES , REMOVE_FROM_FAVORITES 
+
+
+         * when the user clicks the favorite button, check if the item is already in favorites 
+            * if it is, remove it from favorites
+               - set isFavorite to false
+               - remove it from favoritesState , local storage and database 
+
+            * if it is not , add it to favorites 
+               - set isFavorite to true
+               - add it to favoritesState , local storage and database
+         * When the user go to the favorites page 
+            - Get all favorites data and show all this data with the user can remove item , booking item 
+*/
