@@ -18,6 +18,27 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
+## Development API
+
+This project uses [json-server](https://github.com/typicode/json-server) as a fake REST API for development.
+
+### How to run json-server
+
+1. Install json-server globally (if not installed):
+   ```
+   npm install -g json-server
+   ```
+
+2. Run the server:
+   ```
+   json-server --watch src/FakeDB/db.json --port 9000
+   ```
+
+- The API will be available at `http://localhost:9000/`
+
+### Note
+Make sure json-server is running before starting the Next.js app.
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
