@@ -5,7 +5,6 @@ import Header from "@/components/header/Header";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import FeaturedProperties from "@/components/FeaturedProperties/FeaturedProperties";
 import PropertiesLoading from "@/components/FeaturedProperties/PropertiesLoading";
-import CitiesLoading from "@/components/FeaturedCities/CitiesLoading";
 
 export const metadata = {
   title : 'Home',
@@ -19,10 +18,9 @@ export default async function Home() {
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
       
         <HeroSection />
-        <Suspense fallback={<div>CitiesLoading .....</div>} >
+        <Suspense fallback={<div>Loading .....</div>} >
             <FeaturedCities />
         </Suspense>
-        <CitiesLoading/>
         <Suspense fallback={<PropertiesLoading /> } >
             <FeaturedProperties />
         </Suspense>

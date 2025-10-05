@@ -1,8 +1,15 @@
+import { getData } from '@/data/getData';
 import SectionHeader from '../SectionHeader'
 import CityItem from './CityItem'
+import { citiesApiUrl } from '@/utils/utils';
 const FeaturedCities  = async () => {
-  const res = await fetch('http://localhost:9000/cities', { cache: 'no-store' });
-  const cities = await res.json();
+ 
+  const data = await getData(citiesApiUrl);  
+  const cities = process.env.NODE_ENV === 'production'
+    ? data.cities
+    : data;
+
+    
   return (
     <section className='w-full'>
       <div className="container">
