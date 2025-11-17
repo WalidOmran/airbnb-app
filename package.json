@@ -10,20 +10,28 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@react-google-maps/api": "^2.20.7",
+    "@tanstack/react-query": "^5.90.8",
+    "@tanstack/react-query-devtools": "^5.90.2",
     "axios": "^1.11.0",
     "date-fns": "^4.1.0",
+    "google-map-react": "^2.2.5",
+    "leaflet": "^1.9.4",
     "next": "^15.5.2",
     "react": "19.1.0",
     "react-date-range": "^2.0.1",
     "react-datepicker": "^8.4.0",
     "react-dom": "19.1.0",
+    "react-leaflet": "^5.0.0",
     "react-swiper": "^0.1.5",
     "sharp": "^0.34.4",
+    "sonner": "^2.0.7",
     "swiper": "^12.0.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@tanstack/eslint-plugin-query": "^5.91.2",
     "eslint": "^9",
     "eslint-config-next": "15.4.2",
     "tailwindcss": "^4"

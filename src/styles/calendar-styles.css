@@ -1,0 +1,26 @@
+/* General calendar appearance improvement */
+.rdrCalendarWrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Disabled days */
+.rdrDay.rdrDayDisabled {
+  text-decoration: line-through;
+  cursor: not-allowed !important;
+  position: relative;
+}
+
+.rdrDay.rdrDayDisabled::before {
+  content: '🚫';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 10px;
+  opacity: 0.5;
+}
+
+.rdrDay.rdrDayDisabled:hover {
+  background-color: #fecaca !important;
+}

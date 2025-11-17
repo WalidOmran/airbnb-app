@@ -28,10 +28,11 @@ const FeaturedPropertiesCard = ({item ,totalSlides}) => {
 
                     
             </div>
-            <Link  href={`/property-details/${item.id}`} className=''>
+            <Link  href={`/Property/${item.id}`} className=''>
+            
                 <div className='w-full '>
                     <div className='relative h-70 w-[100%] bg-gray-100 rounded-lg'>
-                        <Image src={item.images[0]} alt={`property photo - ${item.title}`} fill className='rounded-xl object-cover object-center ' priority />
+                        <Image src={item.images[0]} alt={`property photo - ${item.title}`} fill className='rounded-xl object-cover object-center ' priority={false} />
                     </div>
                     <div className='flex justify-between  p-2'>
                         <h3 className='pt-1 text-sm'>{item.title}</h3>
@@ -53,8 +54,6 @@ const FeaturedPropertiesCard = ({item ,totalSlides}) => {
                 </div>
             </Link>
         </div>
-       
-        
     )
 }
 

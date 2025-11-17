@@ -8,6 +8,20 @@ import './FeaturedPropertiesSlider.css';
 
 const FeaturedPropertiesSlider = ({properties }) => {
 
+    const breakpoints= {
+                        640: {
+                            slidesPerView: (properties.length >= 2 ) ? 2 : properties.length,
+                            spaceBetween: 20,
+                        },
+                        768: {
+                            slidesPerView: (properties.length >= 3 ) ? 3 : properties.length,
+                            spaceBetween: 20,
+                        },
+                        1024: {
+                            slidesPerView: (properties.length >= 5 ) ? 5 : properties.length,
+                            spaceBetween: 20,
+                        },
+                    }
     const totalSlides = properties.length;
     const [announcement, setAnnouncement] = useState("");
     return (
@@ -18,20 +32,7 @@ const FeaturedPropertiesSlider = ({properties }) => {
                     delay: 2500,
                     disableOnInteraction: false,
                     }}
-                breakpoints={{
-                        640: {
-                            slidesPerView: 2,
-                            spaceBetween: 20,
-                        },
-                        768: {
-                            slidesPerView: 3,
-                            spaceBetween: 20,
-                        },
-                        1024: {
-                            slidesPerView: 5,
-                            spaceBetween: 20,
-                        },
-                    }}
+                breakpoints={breakpoints}
                 modules={[Autoplay,Keyboard,Navigation]}
                  keyboard={{ enabled: true }}
                  navigation={{ clickable: true }}
@@ -39,9 +40,11 @@ const FeaturedPropertiesSlider = ({properties }) => {
                         setAnnouncement(`Showing slide ${swiper.activeIndex + 1} of ${swiper.slides.length}`);
                     }}
                 >
-                {properties.map((item) => (
+                {
+                 
+                properties?.map((item) => (
                     <SwiperSlide key={item.id}>
-                        <FeaturedPropertiesCard item={item} totalSlides={totalSlides} />
+                         <FeaturedPropertiesCard item={item} totalSlides={totalSlides} />
                     </SwiperSlide>
                 ))}
             </Swiper>

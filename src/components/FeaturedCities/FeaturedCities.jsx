@@ -1,10 +1,9 @@
 import { getData } from '@/data/getData';
 import SectionHeader from '../SectionHeader'
 import CityItem from './CityItem'
-import { citiesApiUrl } from '@/utils/utils';
+import { apiUrl } from '@/utils/utils';
 const FeaturedCities  = async () => {
- 
-  const data = await getData(citiesApiUrl);  
+  const data = await getData(`${apiUrl}/cities`);  
   const cities = process.env.NODE_ENV === 'production'
     ? data.cities
     : data;

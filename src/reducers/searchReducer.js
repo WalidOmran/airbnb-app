@@ -1,4 +1,4 @@
-import { searchActions, initialSearchData } from '../store/searchConstants';
+import { searchActions } from "@/constants/searchConstants";
 
 export const searchReducer = (state, action) => {
   switch (action.type) {

@@ -756,48 +756,125 @@
   "bookings": [
     {
       "id": "1",
-      "property_id": 1,
-      "user_id": 2,
-      "start_date": "2025-09-01",
-      "end_date": "2025-09-05",
-      "total_price": 600,
+      "propertyId": 1,
+      "userId": 2,
+      "startDate": "2025-09-01",
+      "endDate": "2025-09-05",
+      "totalPrice": 600,
       "status": "confirmed"
     },
     {
       "id": "2",
-      "property_id": 3,
-      "user_id": 1,
-      "start_date": "2025-10-10",
-      "end_date": "2025-10-15",
-      "total_price": 500,
+      "propertyId": 3,
+      "userId": 1,
+      "startDate": "2025-10-10",
+      "endDate": "2025-10-15",
+      "totalPrice": 500,
       "status": "pending"
     },
     {
       "id": "3",
-      "property_id": 5,
-      "user_id": 4,
-      "start_date": "2025-11-01",
-      "end_date": "2025-11-07",
-      "total_price": 910,
+      "propertyId": 5,
+      "userId": 4,
+      "startDate": "2025-11-01",
+      "endDate": "2025-11-07",
+      "totalPrice": 910,
       "status": "confirmed"
     },
     {
       "id": "4",
-      "property_id": 7,
-      "user_id": 9,
-      "start_date": "2025-12-01",
-      "end_date": "2025-12-10",
-      "total_price": 1100,
+      "propertyId": 7,
+      "userId": 9,
+      "startDate": "2025-12-01",
+      "endDate": "2025-12-10",
+      "totalPrice": 1100,
       "status": "confirmed"
     },
     {
       "id": "5",
-      "property_id": 10,
-      "user_id": 6,
-      "start_date": "2025-11-20",
-      "end_date": "2025-11-25",
-      "total_price": 400,
+      "propertyId": 10,
+      "userId": 6,
+      "startDate": "2025-11-20",
+      "endDate": "2025-11-25",
+      "totalPrice": 400,
       "status": "confirmed"
+    },
+    {
+      "id": "a219",
+      "startDate": "2025-11-11",
+      "endDate": "2025-11-14",
+      "guests": 1,
+      "nights": 4,
+      "totalPrice": 520,
+      "status": "pending",
+      "propertyId": 5,
+      "userId": null
+    },
+    {
+      "id": "b527",
+      "startDate": "2025-11-17",
+      "endDate": "2025-11-21",
+      "guests": 1,
+      "nights": 5,
+      "totalPrice": 650,
+      "status": "pending",
+      "propertyId": 5,
+      "userId": null
+    },
+    {
+      "id": "d154",
+      "startDate": "2025-11-21",
+      "endDate": "2025-11-24",
+      "guests": 1,
+      "nights": 4,
+      "totalPrice": 520,
+      "status": "pending",
+      "propertyId": 5,
+      "userId": null
+    },
+    {
+      "id": "490f",
+      "startDate": "2025-11-28",
+      "endDate": "2025-11-29",
+      "guests": 4,
+      "nights": 2,
+      "totalPrice": 1040,
+      "status": "pending",
+      "propertyId": 5,
+      "userId": null
+    },
+    {
+      "id": "b241",
+      "startDate": "2025-12-10",
+      "endDate": "2025-12-12",
+      "guests": 1,
+      "nights": 3,
+      "totalPrice": 390,
+      "status": "pending",
+      "propertyId": 5,
+      "userId": null
+    },
+    {
+      "id": "6893",
+      "startDate": "2025-11-18",
+      "endDate": "2025-11-20",
+      "guests": 1,
+      "nights": 3,
+      "totalPrice": 540,
+      "status": "pending",
+      "propertyId": 4,
+      "userId": null
+    },
+    {
+      "id": "07c7",
+      "startDate": "2025-11-24",
+      "endDate": "2025-11-27",
+      "guests": 1,
+      "nights": 4,
+      "totalPrice": 380,
+      "status": "pending",
+      "propertyId": 11,
+      "userId": null
     }
   ],
   "reviews": [
@@ -952,6 +1029,90 @@
       "review": {
         "rating": 4.5,
         "comment": "Modern house with great style and garden."
+      }
+    },
+    {
+      "id": "6",
+      "title": "Elegant Apartment in Glasgow",
+      "description": "Spacious apartment with the latest facilities in the heart of Glasgow.",
+      "city_id": 6,
+      "address": "100 Queen Street, Glasgow",
+      "location": {
+        "latitude": 55.8642,
+        "longitude": -4.2518
+      },
+      "price_per_night": 140,
+      "max_guests": 5,
+      "images": [
+        "/properties/6/01.jpg",
+        "/properties/6/02.jpg"
+      ],
+      "host_id": 7,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Air Conditioning",
+        "Parking"
+      ],
+      "review": {
+        "rating": 4.7,
+        "comment": "Elegant and well located apartment with all necessary comforts."
+      }
+    },
+    {
+      "id": "7",
+      "title": "Family House in Bristol",
+      "description": "Family home with private garden in Bristol.",
+      "city_id": 7,
+      "address": "52 Mary Street, Bristol",
+      "location": {
+        "latitude": 51.4545,
+        "longitude": -2.5879
+      },
+      "price_per_night": 110,
+      "max_guests": 6,
+      "images": [
+        "/properties/7/01.jpg",
+        "/properties/7/02.jpg"
+      ],
+      "host_id": 6,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Garden",
+        "Heating"
+      ],
+      "review": {
+        "rating": 4.3,
+        "comment": "Great family house, plenty of space for children and outdoor activities."
+      }
+    },
+    {
+      "id": "8",
+      "title": "Modern Apartment in Copenhagen",
+      "description": "Stylish apartment in central Copenhagen near main markets.",
+      "city_id": 8,
+      "address": "12 Store Street, Copenhagen",
+      "location": {
+        "latitude": 55.6761,
+        "longitude": 12.5683
+      },
+      "price_per_night": 160,
+      "max_guests": 4,
+      "images": [
+        "/properties/8/01.jpg",
+        "/properties/8/02.jpg"
+      ],
+      "host_id": 7,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Parking",
+        "Smart TV"
+      ],
+      "review": {
+        "rating": 4.7,
+        "comment": "Stylish apartment in the heart of the city, very convenient location."
       }
     }
   ]

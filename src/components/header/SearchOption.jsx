@@ -12,11 +12,11 @@ const SearchOption =  ({searchData,searchDispatch,handleSubmit,setInput})=> {
 
     useEffect(() => {
         setRange([{
-            startDate: searchData.startDate || new Date(),
-            endDate: searchData.endDate || new Date(),
+            startDate: searchData?.startDate || new Date(),
+            endDate: searchData?.endDate || new Date(),
             key: 'selection'
         }]);
-    }, [searchData.startDate, searchData.endDate]);
+    }, [searchData?.startDate, searchData?.endDate]);
 
     const handleSelect = (ranges)=> {
         const selectRange = ranges.selection;
@@ -46,7 +46,7 @@ const SearchOption =  ({searchData,searchDispatch,handleSubmit,setInput})=> {
               test="SET_NUM_OF_GUESTS"
               name="numOfGuests" 
               id='numOfGuests'
-              value={searchData.numOfGuests}
+              value={searchData?  searchData.numOfGuests : 0 }
               min={1}
               className='block w-10 py-1 mt-3 text-sm  placeholder-gray-400  outline-none' 
               onChange={(e)=> searchDispatch({ type: searchActions.SET_NUM_OF_GUESTS,  payload: Number(e.target.value) })}

@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* @import '@/styles/calendar-styles.css'; */
+@import "../styles/calendar-styles.css";
 @layer components {
   .container {
     @apply px-4 mx-auto  w-full sm:w-[540px] md:w-[720px] lg:w-[960px] xl:w-[1140px] 2xl:w-[1320px];
@@ -17,10 +19,38 @@
 }
 
 
-.rdrSelected, .rdrInRange, .rdrStartEdge, .rdrEndEdge
- {
-    background: #ff6467;
-   
+/* Design for disabled days */
+.rdrDay.rdrDayDisabled {
+  /* background-color: #fee2e2 !important; Light red */
+  color: #991b1b !important; /* Dark red text */
+  text-decoration: line-through !important;
+  cursor: not-allowed !important;
+  opacity: 0.9 !important;
+}
+
+
+.rdrDay.rdrDayDisabled .rdrDayNumber span {
+  /* color: #991b1b !important; */
+  text-decoration: line-through !important;
+}
+
+.rdrDay:not(.rdrDayDisabled):not(.rdrDayPassive):hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+}
+/* Hover effect for disabled days */
+.rdrDay.rdrDayDisabled:hover {
+  background-color: #fecaca !important;
+}
+
+
+.rdrDay.rdrDayDisabled::before {
+  /* content: '🔒'; */
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 10px;
+  opacity: 0.6;
 }
 
 

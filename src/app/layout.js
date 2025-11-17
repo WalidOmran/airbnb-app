@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer/Footer";
 import { FavoritesContextProvider } from "@/context/FavoritesContext";
+import { ReservationContextProvider } from "@/context/ReservationContext";
 
 
 const geistSans = Geist({
@@ -26,7 +27,10 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <FavoritesContextProvider>
-          {children}
+          <ReservationContextProvider >
+             {children}
+          </ReservationContextProvider>
+         
           <Footer/>
         </FavoritesContextProvider>
         
