@@ -5,10 +5,10 @@ import { apiUrl } from '@/utils/utils';
 const FeaturedCities  = async () => {
   const data = await getData(`${apiUrl}/cities`);  
   const cities = process.env.NODE_ENV === 'production'
-    ? data.cities
-    : data;
+    ? data?.cities ?? []
+    : data ?? [];
 
-    
+
   return (
     <section className='w-full'>
       <div className="container">

@@ -1,5 +1,3 @@
-// src/utils/dateUtils.js
-
 /**
  * Generates all dates between start and end date (inclusive).
  * @param {Date} startDate - Start date
@@ -67,8 +65,8 @@ export const isDateDisabled = (date, disabledDates) => {
 export const findNextAvailableDate = (disabledDates) => {
   let currentDate = new Date();
   currentDate.setHours(0, 0, 0, 0);
-  
-  // ابحث عن أول يوم متاح
+ 
+
   while (isDateDisabled(currentDate, disabledDates)) {
     currentDate.setDate(currentDate.getDate() + 1);
   }

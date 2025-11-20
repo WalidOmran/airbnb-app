@@ -35,6 +35,8 @@ const SearchBar = ({placeholder}) => {
   return (
     <div className='relative '>
        <form onSubmit={handleSubmit} className="w-full max-w-md h-12 flex items-center bg-white rounded-lg shadow-sm lg:ml-6  ">
+         
+         
           <input 
                 type="text" 
                 name="search"
