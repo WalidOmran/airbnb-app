@@ -11,7 +11,7 @@ import AuthLayout from '@/components/auth/AuthLayout';
 import SignInWithGoogle from '@/components/auth/SignInWithGoogle';
 
 
-const page = () => {
+const SignInPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [remember, setRemember] = useState(false);
@@ -104,5 +104,5 @@ const page = () => {
   )
 }
 
-export default page
+export default SignInPage
  

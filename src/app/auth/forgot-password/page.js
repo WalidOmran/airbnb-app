@@ -9,7 +9,7 @@ import { apiUrl } from "@/utils/utils";
 import Link from "next/link";
 import { useState } from "react";
 
-const page = () => {
+const ForgotPasswordPage = () => {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
@@ -93,6 +93,6 @@ const page = () => {
   )
 }
 
-export default page
+export default ForgotPasswordPage
                                                                                                                               
   

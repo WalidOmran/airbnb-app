@@ -11,7 +11,7 @@ import SignInWithGoogle from "@/components/auth/SignInWithGoogle";
 
 
 
-const page = () => {
+const SignUpPage = () => {
     const [userName, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -132,4 +132,4 @@ const page = () => {
   )
 }
 
-export default page
+export default SignUpPage
