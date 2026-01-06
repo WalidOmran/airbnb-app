@@ -3,7 +3,7 @@ import "./globals.css";
 import Footer from "@/components/footer/Footer";
 import { FavoritesContextProvider } from "@/context/FavoritesContext";
 import { ReservationContextProvider } from "@/context/ReservationContext";
-
+import Providers from "./Providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,6 +26,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Providers>
         <FavoritesContextProvider>
           <ReservationContextProvider >
              {children}
@@ -33,7 +34,7 @@ export default function RootLayout({ children }) {
          
           <Footer/>
         </FavoritesContextProvider>
-        
+        </Providers>
       </body>
     </html>
   );

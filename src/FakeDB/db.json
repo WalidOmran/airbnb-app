@@ -8,7 +8,8 @@
       "location": {
         "latitude": 51.5074,
         "longitude": -0.1278
-      }
+      },
+      "desc": "London is the capital city of England, known for its rich history and famous landmarks like Big Ben and Buckingham Palace."
     },
     {
       "id": "2",
@@ -18,7 +19,8 @@
       "location": {
         "latitude": 53.4808,
         "longitude": -2.2426
-      }
+      },
+      "desc": "Manchester is renowned for its music scene, football clubs, and vibrant cultural heritage in northwest England."
     },
     {
       "id": "3",
@@ -28,7 +30,8 @@
       "location": {
         "latitude": 52.4862,
         "longitude": -1.8904
-      }
+      },
+      "desc": "Birkenhead is a town located on the Wirral Peninsula, known for its waterfront and historical shipbuilding industry."
     },
     {
       "id": "4",
@@ -38,7 +41,8 @@
       "location": {
         "latitude": 53.4084,
         "longitude": -2.9916
-      }
+      },
+      "desc": "Liverpool is famous for its musical heritage (The Beatles), football clubs, and lively waterfront."
     },
     {
       "id": "5",
@@ -48,7 +52,8 @@
       "location": {
         "latitude": 51.4816,
         "longitude": -3.1791
-      }
+      },
+      "desc": "Cardiff is the capital of Wales, known for Cardiff Castle and its vibrant city centre."
     },
     {
       "id": "6",
@@ -58,7 +63,8 @@
       "location": {
         "latitude": 55.8642,
         "longitude": -4.2518
-      }
+      },
+      "desc": "Glasgow is a major city in Scotland, known for its cultural venues, Victorian architecture, and dynamic urban life."
     },
     {
       "id": "7",
@@ -68,7 +74,8 @@
       "location": {
         "latitude": 51.4545,
         "longitude": -2.5879
-      }
+      },
+      "desc": "Bristol is a city in southwest England, famous for its maritime history, music, and legal graffiti street art."
     },
     {
       "id": "8",
@@ -78,26 +85,20 @@
       "location": {
         "latitude": 55.6761,
         "longitude": 12.5683
-      }
+      },
+      "desc": "Copenhagen is the capital of Denmark, known for its beautiful harbour, design, and quality of life."
     }
   ],
   "users": [
     {
-      "id": "1",
-      "name": "Ahmed Mohamed",
-      "email": "ahmed@example.com",
-      "phone": "01000000000",
-      "avatar_url": "/avatars/ahmed.jpg",
-      "isHost": true,
-      "favorites": [
-        2,
-        3
-      ]
+      "hashedPassword": "$2b$10$mjc3WIj.YU7x8tOX6HYe8OCB/MCUt4PfEigAqRfZ37X4LBAzK/RZa",
+      "id": "1"
     },
     {
       "id": "2",
       "name": "Mona Abdallah",
       "email": "mona@example.com",
+      "password": "123456",
       "phone": "01100000000",
       "avatar_url": "/avatars/mona.jpg",
       "isHost": false,
@@ -110,6 +111,7 @@
       "id": "3",
       "name": "Sami Ali",
       "email": "sami@example.com",
+      "password": "123456",
       "phone": "01234567890",
       "avatar_url": "/avatars/sami.jpg",
       "isHost": true,
@@ -119,6 +121,7 @@
       "id": "4",
       "name": "Laila Hassan",
       "email": "layla@example.com",
+      "password": "123456",
       "phone": "01500000000",
       "avatar_url": "/avatars/layla.jpg",
       "isHost": false,
@@ -131,6 +134,7 @@
       "id": "5",
       "name": "Mohamed Sami",
       "email": "mhamad@example.com",
+      "password": "123456",
       "phone": "0145555555",
       "avatar_url": "/avatars/mhamad.jpg",
       "isHost": true,
@@ -144,6 +148,7 @@
       "id": "6",
       "name": "Fatma Elzahraa",
       "email": "fatma@example.com",
+      "password": "123456",
       "phone": "0160000000",
       "avatar_url": "/avatars/fatma.jpg",
       "isHost": false,
@@ -156,6 +161,7 @@
       "id": "7",
       "name": "Youssef Ibrahim",
       "email": "youssef@example.com",
+      "password": "123456",
       "phone": "0170000000",
       "avatar_url": "/avatars/youssef.jpg",
       "isHost": true,
@@ -167,6 +173,7 @@
       "id": "8",
       "name": "Reem Ahmed",
       "email": "reem@example.com",
+      "password": "123456",
       "phone": "0180000000",
       "avatar_url": "/avatars/reem.jpg",
       "isHost": false,
@@ -179,6 +186,7 @@
       "id": "9",
       "name": "Karim Youssef",
       "email": "karim@example.com",
+      "password": "123456",
       "phone": "0190000000",
       "avatar_url": "/avatars/karim.jpg",
       "isHost": false,
@@ -194,8 +202,56 @@
       "favorites": [
         4
       ]
+    },
+    {
+      "id": "user-ali789",
+      "name": "ali",
+      "email": "ali789@gmail.com",
+      "phone": "09987867556",
+      "password": "123456",
+      "provider": "credentials"
+    },
+    {
+      "id": "13fdd312-a8b4-4f19-9bee-0e6eaeb8a54d",
+      "name": "walid ",
+      "email": "wa@gamail.com",
+      "phone": "09987867556",
+      "password": "123456",
+      "provider": "credentials"
+    },
+    {
+      "id": "b2258bf8-5989-4045-afbf-0ca89c7906d1",
+      "name": "walid ",
+      "email": "aa88@gmail.com",
+      "phone": "09987867556",
+      "password": "$2b$12$86G7IOMpKDInMpagHXPTYuTBRHa/u0QiVMnw6WfoQdabPtf9aNNB6",
+      "provider": "credentials"
+    },
+    {
+      "id": "d6163225-2342-4006-b414-3ddf5879aacf",
+      "name": "Walid Omran",
+      "email": "walidomran72@gmail.com",
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocKpssA5ra6iww3rdwwDZ20MApWeAAfXY_BXTKAfeAxg1zKy86wZ=s96-c",
+      "provider": "google"
     }
   ],
+  "resetTokens": [
+    {
+      "id": "3e0f",
+      "email": "ahmed@example.com",
+      "token": "reset-1767524647874-sc08aq53e",
+      "expires": "2026-01-04T12:04:07.874Z"
+    },
+    {
+      "id": "8820",
+      "email": "ahmed@example.com",
+      "token": "reset-1767598300289-n3gsuxv9z",
+      "expires": "2026-01-05T08:31:40.289Z"
+    }
+  ],
+  "auth": {
+    "login": "POST /auth/login"
+  },
   "properties": [
     {
       "id": "1",
