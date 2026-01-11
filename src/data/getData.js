@@ -1,9 +1,14 @@
 import { notFound } from "next/navigation";
 
+
+
 export const getData = async (urlPath, options = {}) => {
   try {
     const res = await fetch(urlPath, {
-      next: { revalidate: 60 },
+      ...(process.env.NODE_ENV === 'production' && {
+        cache: 'no-store',
+        next: { revalidate: 0 }
+      }),
       ...options,
     });
 
