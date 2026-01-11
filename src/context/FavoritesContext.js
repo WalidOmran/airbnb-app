@@ -1,13 +1,13 @@
-'use client';
+"use client";
 import { Actions, favoritesReducer } from "@/reducers/favoritesReducer";
-import { initialFavoritesState } from "@/utils/utils";
+import { initialFavoritesState, apiUrl } from "@/utils/utils";
 import { createContext, useContext, useEffect, useReducer } from "react";
 import axios from 'axios';
 const FavoritesContext = createContext({});
 
 
 export const FavoritesContextProvider = ({children}) => {
-    const FavoritesURLpath = "http://localhost:9000/favorites";
+    const FavoritesURLpath = `${apiUrl}/favorites`;
     const [favoritesState,favoritesDispatch ] = useReducer(favoritesReducer,initialFavoritesState);
     // Add To Api
     const AddItemToDB = async (URLpath,item) => {

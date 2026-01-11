@@ -14,7 +14,7 @@ export default function FeaturedCities() {
       const citiesData = process.env.NODE_ENV === 'production'
         ? data?.cities ?? []
         : data ?? [];
-          console.log('CITIES DATA:', data);
+      console.log('CITIES DATA:', data);
       setCities(citiesData);
       setLoading(false);
     });
