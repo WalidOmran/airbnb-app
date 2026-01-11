@@ -1,5 +1,5 @@
 export const propertiesApiUrl = process.env.NODE_ENV === 'production'
-  ? 'https://airbnb-json-db.vercel.app'
+  ? 'https://raw.githubusercontent.com/WalidOmran/airbnb-app/main/src/FakeDB/db.json'
   : 'http://localhost:9000/properties';
 
 
@@ -12,5 +12,6 @@ export const propertiesApiUrl = process.env.NODE_ENV === 'production'
 export const initialFavoritesState = {
     items : []
 };
+
 
 
