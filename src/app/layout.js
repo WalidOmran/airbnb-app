@@ -4,6 +4,7 @@ import Footer from "@/components/footer/Footer";
 import { FavoritesContextProvider } from "@/context/FavoritesContext";
 import { ReservationContextProvider } from "@/context/ReservationContext";
 import Providers from "./Providers";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
           <Footer/>
         </FavoritesContextProvider>
         </Providers>
+        <SpeedInsights />
       </body>
     </html>
   );
