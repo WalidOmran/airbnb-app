@@ -37,16 +37,17 @@ const UserMenu = () => {
                 
             </span>
             <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-sm">
-                {
-                session?.user?.image ? (
-                    <img 
-                        src={session.user.image}  
-                        alt="User Avatar"
-                        className="w-8 h-8 rounded-full object-cover"
-                    />
-                )
-                          : session?.user?.name?.[0]?.toUpperCase() || "U"}
-                  )
+                                {
+                                    session?.user?.image ? (
+                                        <img
+                                            src={session.user.image}
+                                            alt="User Avatar"
+                                            className="w-8 h-8 rounded-full object-cover"
+                                        />
+                                    ) : (
+                                        session?.user?.name?.[0]?.toUpperCase() || "U"
+                                    )
+                                }
             </div>
 
         </button>
