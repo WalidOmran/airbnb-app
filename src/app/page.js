@@ -5,7 +5,7 @@ import Header from "@/components/header/Header";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import FeaturedProperties from "@/components/FeaturedProperties/FeaturedProperties";
 import PropertiesLoading from "@/components/FeaturedProperties/PropertiesLoading";
-
+export const fetchCache = 'force-no-store';
 export const dynamic = 'force-dynamic'; 
 export const metadata = {
   title : 'Home',

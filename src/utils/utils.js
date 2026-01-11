@@ -1,7 +1,6 @@
 export const propertiesApiUrl = process.env.NODE_ENV === 'production'
-  ? 'https://raw.githubusercontent.com/WalidOmran/airbnb-app/main/src/FakeDB/db.json'
+  ? 'https://airbnb-json-db.vercel.app/properties' 
   : 'http://localhost:9000/properties';
-
 
 
   export const apiUrl = process.env.NODE_ENV === 'production'
