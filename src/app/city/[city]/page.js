@@ -30,6 +30,8 @@ const CityPage = async ({ params } = {}) => {
           title={`Vacation rentals according to their classification ${cityName}`}
           desc="Information confirmed by guests: These accommodations received high ratings for location, cleanliness, and other factors."
         />
+
+    
         <CityPropertiesFeatures cityName={cityName} />
         <CityProperties propertiesList={allProperties} title="Explore Other Cities" />
       </>

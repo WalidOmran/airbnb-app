@@ -90,10 +90,7 @@
     }
   ],
   "users": [
-    {
-      "hashedPassword": "$2b$10$mjc3WIj.YU7x8tOX6HYe8OCB/MCUt4PfEigAqRfZ37X4LBAzK/RZa",
-      "id": "1"
-    },
+  
     {
       "id": "2",
       "name": "Mona Abdallah",
@@ -236,18 +233,7 @@
     }
   ],
   "resetTokens": [
-    {
-      "id": "3e0f",
-      "email": "ahmed@example.com",
-      "token": "reset-1767524647874-sc08aq53e",
-      "expires": "2026-01-04T12:04:07.874Z"
-    },
-    {
-      "id": "8820",
-      "email": "ahmed@example.com",
-      "token": "reset-1767598300289-n3gsuxv9z",
-      "expires": "2026-01-05T08:31:40.289Z"
-    }
+    
   ],
   "auth": {
     "login": "POST /auth/login"
