@@ -41,6 +41,7 @@ export default function FeaturedProperties() {
 
   useEffect(() => {
     getData(propertiesApiUrl).then(data => {
+      console.log('PROPS DATA:', data);
       setProperties(data.properties || data);
       setLoading(false);
     });
