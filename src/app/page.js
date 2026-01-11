@@ -6,6 +6,7 @@ import HeroSection from "@/components/HeroSection/HeroSection";
 import FeaturedProperties from "@/components/FeaturedProperties/FeaturedProperties";
 import PropertiesLoading from "@/components/FeaturedProperties/PropertiesLoading";
 
+export const dynamic = 'force-dynamic'; 
 export const metadata = {
   title : 'Home',
   description: 'This is Home page for my app',
