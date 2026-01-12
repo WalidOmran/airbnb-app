@@ -11,10 +11,8 @@ export default function FeaturedCities() {
 
   useEffect(() => {
     getData(`${apiUrl}/cities`).then(data => {
-      const citiesData = process.env.NODE_ENV === 'production'
-        ? data?.cities ?? []
-        : data ?? [];
       console.log('CITIES DATA:', data);
+      const citiesData = data?.cities || data || [];
       setCities(citiesData);
       setLoading(false);
     });
