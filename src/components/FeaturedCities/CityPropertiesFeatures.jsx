@@ -9,7 +9,6 @@ const CityPropertiesFeatures = ({cityName}) => {
           { title: "Cable TV", icon: TvIcon },
         ]
   return(
-        
       <div className="pt-10 pb-5 bg-gray-100">
         <div className="container">
           <h2 className="mb-2 text-center text-lg">Common features in holiday rentals in the {cityName}  Governorate</h2>
