@@ -3,6 +3,10 @@ const nextConfig = {
    productionBrowserSourceMaps: true,
     images: {
     remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'airbnb-json-db.vercel.app', 
+      },
       
       {
         protocol: 'https',
@@ -11,10 +15,12 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'example.com',
-        // pathname: '/**',
+        hostname: 'images.unsplash.com', 
       },
-    
+      {
+        protocol: 'https',
+        hostname: '**.googleusercontent.com', 
+      }
     ],
   },
 };

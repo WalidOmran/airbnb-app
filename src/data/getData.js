@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 
 
-
 export const getData = async (urlPath, options = {}) => {
   try {
     const res = await fetch(urlPath, {
@@ -16,6 +15,7 @@ export const getData = async (urlPath, options = {}) => {
       notFound();
       throw new Error('Network response was not ok');
     }
+
 
     return await res.json();
   } catch (error) {
