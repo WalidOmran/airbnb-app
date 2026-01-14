@@ -8,19 +8,35 @@ import { ReservationActions } from '@/constants/reservationConstants';
 import { Toaster } from 'sonner';  
 import useReservationBooking from '@/customHooks/useReservationBooking';
 const Reservation = ({property}) => {
+  const [mounted, setMounted] = useState(false);
   const [ openReservationCard ,  setOpenReservationCard] = useState(false);   
   const {reservationData , reservationDispatch } = useReservation();
   const { isLoading  } = useReservationBooking({
-  propertyId: property.id,
-  setOpenReservationCard,
-});
+        propertyId: property.id,
+        setOpenReservationCard,
+      });
 
   
 
-    useEffect(()=> {
-       reservationData.propertyId === null && reservationDispatch({type : ReservationActions.SET_PROPERTY_ID , payload:Number(property.id)});
-    },[property.id]);
+      useEffect(() => {
+        setMounted(true);
+      }, []);
 
+    
+    useEffect(() => {
+      
+      if (mounted && reservationData.propertyId === null) {
+        reservationDispatch({
+          type: ReservationActions.SET_PROPERTY_ID,
+          payload: Number(property.id)
+        });
+      }
+    }, [property.id, mounted, reservationData.propertyId, reservationDispatch]);
+
+    if (!mounted) {
+      return <div className="hidden md:block h-64 bg-gray-50 animate-pulse rounded-xl"></div>; 
+      
+    }
   return (
     <>
       <div className="fixed top-0 left-0 bottom-0 right-0 hidden md:flex justify-center-safe md:justify-end-safe  md:w-auto md:sticky bottom-0 md:top-0  bg-white px-6 md:p-0 ">

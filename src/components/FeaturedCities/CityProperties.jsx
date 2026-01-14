@@ -1,9 +1,8 @@
-'use client';
+"use client";
 import React from 'react'
 import FeaturedPropertiesSlider from '../FeaturedProperties/FeaturedPropertiesSlider'
 
-
-const CityProperties = async ({propertiesList, title, desc }) => {
+const CityProperties = ({propertiesList, title, desc }) => {
   
   return (
     <div className="mt-10 mb-10 py-3">

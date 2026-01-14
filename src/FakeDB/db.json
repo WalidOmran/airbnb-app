@@ -90,7 +90,6 @@
     }
   ],
   "users": [
-  
     {
       "id": "2",
       "name": "Mona Abdallah",
@@ -230,11 +229,21 @@
       "email": "walidomran72@gmail.com",
       "image": "https://lh3.googleusercontent.com/a/ACg8ocKpssA5ra6iww3rdwwDZ20MApWeAAfXY_BXTKAfeAxg1zKy86wZ=s96-c",
       "provider": "google"
+    },
+    {
+      "password": "$2b$10$n7WlGIqzOvG8ebV5iyKRMei1rZto1.UJkE5x4jqP.LVviHuMrWy8.",
+      "id": "dd0c37ef-ae6b-4255-a165-9bff3b654427"
+    },
+    {
+      "id": "5a518d06-3b84-43e1-9b18-7c164350d1f5",
+      "name": "Walid",
+      "email": "wa33@gmail.com",
+      "phone": "14545446665466322",
+      "password": "$2b$12$KCcj.AFf0D3MJmpG6ZDK3enALQxpsXq.zBNyYBup//tr5FsqGIizq",
+      "provider": "credentials"
     }
   ],
-  "resetTokens": [
-    
-  ],
+  "resetTokens": [],
   "auth": {
     "login": "POST /auth/login"
   },
@@ -917,6 +926,17 @@
       "status": "pending",
       "propertyId": 11,
       "userId": null
+    },
+    {
+      "id": "520f",
+      "startDate": "2026-01-14",
+      "endDate": "2026-01-20",
+      "guests": 1,
+      "nights": 7,
+      "totalPrice": 1050,
+      "status": "pending",
+      "propertyId": 1,
+      "userId": null
     }
   ],
   "reviews": [
@@ -1155,6 +1175,60 @@
       "review": {
         "rating": 4.7,
         "comment": "Stylish apartment in the heart of the city, very convenient location."
+      }
+    },
+    {
+      "id": "9",
+      "title": "Luxury Villa in London",
+      "description": "Luxurious villa with private pool and large garden.",
+      "city_id": 1,
+      "address": "45 Park Street, London",
+      "location": {
+        "latitude": 51.501,
+        "longitude": -0.142
+      },
+      "price_per_night": 400,
+      "max_guests": 8,
+      "images": [
+        "/properties/9/01.jpg",
+        "/properties/9/02.jpg"
+      ],
+      "host_id": 5,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Parking",
+        "Pool"
+      ],
+      "review": {
+        "rating": 4.9,
+        "comment": "Spectacular villa, perfect for large groups, amazing pool and garden."
+      }
+    },
+    {
+      "id": "16",
+      "title": "Cozy Studio in London",
+      "description": "Comfortable studio apartment close to central London.",
+      "city_id": 1,
+      "address": "12 Central Street, London",
+      "location": {
+        "latitude": 51.509,
+        "longitude": -0.134
+      },
+      "price_per_night": 75,
+      "max_guests": 2,
+      "images": [
+        "/properties/16/01.jpg",
+        "/properties/16/02.jpg"
+      ],
+      "host_id": 1,
+      "amenities": [
+        "WiFi",
+        "Heating"
+      ],
+      "review": {
+        "rating": 4.1,
+        "comment": "Cozy studio perfect for short stays."
       }
     }
   ]

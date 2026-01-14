@@ -1,7 +1,7 @@
 "use client";
 import { Actions, favoritesReducer } from "@/reducers/favoritesReducer";
 import { initialFavoritesState, apiUrl } from "@/utils/utils";
-import { createContext, useContext, useEffect, useReducer } from "react";
+import { createContext, useCallback, useContext, useEffect, useReducer } from "react";
 import axios from 'axios';
 const FavoritesContext = createContext({});
 
@@ -50,7 +50,7 @@ export const FavoritesContextProvider = ({children}) => {
             RemoveItemFromDB(FavoritesURLpath, item.id);
     }
 
-    const initialLoadFavorites =   async (URLpath) => {
+    const initialLoadFavorites =   useCallback(async (URLpath) => {
         try {
             const res = await axios.get(FavoritesURLpath);
             if(res.status === 200) {
@@ -62,14 +62,17 @@ export const FavoritesContextProvider = ({children}) => {
         } catch (error) {
             console.log("error :  " , error);
         }
-    }
-    useEffect( ()=> {
+    },[FavoritesURLpath]);
 
-        initialLoadFavorites(FavoritesURLpath);
+    useEffect(() => {
+        initialLoadFavorites();
+    }, [initialLoadFavorites]);
 
+    useEffect(() => {
+    if (favoritesState.items.length > 0) { 
         localStorage.setItem('favoritesState', JSON.stringify(favoritesState));
-
-    },[]);
+    }
+}, [favoritesState]);
     return (
         <FavoritesContext.Provider value={{
             favoritesState : favoritesState,

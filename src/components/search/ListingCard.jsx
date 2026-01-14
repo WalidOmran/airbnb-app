@@ -8,7 +8,7 @@ const ListingCard = ({item}) => {
 
   
   return (
-    <Link  href={`/Property/${item.id}`} className='relative z-8'>
+            <Link  href={`/property/${item.id}`} className='relative z-8'>
     <div className='relative flex flex-col md:flex-row py-5 px-2 mb-5  cursor-pointer pr-4 hover:opacity-80 hover:shadow-lg transition duration-200 ease-out '>
       <div className='relative w-full md:w-1/4 h-48 md:h-52 bg-gray-100 rounded-lg overflow-hidden mt-3'>
         <Image

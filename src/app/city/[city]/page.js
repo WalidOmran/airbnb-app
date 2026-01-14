@@ -7,19 +7,26 @@ import { generateCityMetadata } from "@/utils/metadataHelpers";
 import { fetchCityPageData } from "@/data/fetchCityPageData";
 
 
+
 export async function generateMetadata({ params }) {
-  return generateCityMetadata(params);
+  const resolvedParams = await params;
+  return generateCityMetadata(resolvedParams);
 }
 
 const CityPage = async ({ params } = {}) => {
   
-  const cityParam = params?.city;
-  if (!cityParam) return notFound();
-  const city = parseInt(decodeURIComponent(cityParam), 10);
-  if (Number.isNaN(city)) return notFound();
+  const resolvedParams = await params;
+
+  const city = resolvedParams?.city;
+
+  if (!city) return notFound();
+  const cityNum = parseInt(decodeURIComponent(city), 10);
+  if (Number.isNaN(cityNum)) return notFound();
 
   try {
-    const [allProperties , cityProperties , cityItem] = await fetchCityPageData(city);
+    const [allProperties , cityProperties , cityItem] = await fetchCityPageData(cityNum);
+    
+    if(!cityItem ) return notFound();
     const cityName = cityItem?.name ?? "Unknown City";
 
     return (

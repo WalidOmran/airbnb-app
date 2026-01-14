@@ -1,13 +1,11 @@
-export const propertiesApiUrl = process.env.NODE_ENV === 'production'
-  ? '/api/proxy/properties'
-  : 'http://localhost:9000/properties';
+export const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:9000';
 
-export const apiUrl = '/api/proxy';
+
+
+export const propertiesApiUrl = `${BASE_URL}/properties`;
+export const apiUrl = BASE_URL;
 
 
 export const initialFavoritesState = {
     items : []
 };
-
-
-

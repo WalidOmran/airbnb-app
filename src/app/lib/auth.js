@@ -1,5 +1,5 @@
 import { PostUserData } from "@/data/postUserData";
-import { apiUrl } from "@/utils/utils";
+import { apiUrl, BASE_URL } from "@/utils/utils";
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
@@ -18,18 +18,21 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       },
 
       async authorize(credentials) {
-        // const user2 = await getUserData(credentials.email,credentials.password);
+        
+        try {
+          // const allUsers = await fetch(`${apiUrl}/users`).then(res => res.json());
 
-        const allUsers = await fetch(`${apiUrl}/users`).then(res => res.json());
-
-        const user = allUsers.find(user => user.email === credentials.email );
+        // const user = allUsers.find(user => user.email === credentials.email );
        
+        const res = await fetch(`${BASE_URL}/users?email=${credentials.email}`);
+        const users = await res.json();
+        console.log("Total users fetched:", users.length);
+        const user = Array.isArray(users) && users.length > 0 ? users[0] : null;
         if (!user) {
-          console.log("User not found with email:", credentials?.email);
+          console.log("❌ User not found with email:", credentials?.email);
           return null;
            
         }
-
 
         const passwordMatch = await bcrypt.compare(credentials?.password || "", user.password);
 
@@ -42,8 +45,20 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           };
         };
 
+
+        console.log("❌ Password mismatch");
         return null;
         
+          
+        } catch (error) {
+          console.error("🔥 Auth error:", error.message);
+          return null;
+        }
+        
+
+
+        
+     
       }
     }),
     Google({
@@ -84,9 +99,13 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   },
   callbacks: {
 
-    authorized: async ({ auth }) => !!auth,
-    async redirect() {
-      return "/"
+    authorized: async ({ auth }) => {
+      return !!auth;
+    },
+    async redirect({ url, baseUrl }) {
+      if (url.startsWith("/")) return `${baseUrl}${url}`;
+      else if (new URL(url).origin === baseUrl) return url;
+      return baseUrl;
     },
 
     async jwt({ token, user, account}) {

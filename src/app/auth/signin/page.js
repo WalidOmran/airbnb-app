@@ -1,8 +1,5 @@
 'use client';
-import FormItem from '@/components/form/FormItem';
-import Header from '@/components/header/Header';
 import { signIn } from 'next-auth/react';
-import Link from 'next/link';
 import { useState } from 'react';
 import { z } from 'zod';
 import { signInSchema } from '@/app/lib/schemas/signinSchema';
@@ -33,7 +30,7 @@ const SignInPage = () => {
         setLoading(true);
 
         try{
-            const validatedDate = signInSchema.parse({
+            signInSchema.parse({
                 email,
                 password
             });
@@ -42,19 +39,19 @@ const SignInPage = () => {
                 redirect: false,  
                 email,
                 password,
-                callbackUrl: '/',
-                remember 
+                // callbackUrl: '/',
+                // remember 
         });
 
 
        if(result?.error){
-            setErrors({ general: result.error });
+        setErrors({ general: "Invalid email or password" });
        }else if(result?.ok) {
             setSuccessMsg('Sign in successful! Redirecting...');
-            
+            router.refresh();
             setTimeout(() => {
-                router.push(result.url);
-            }, 1500);
+                router.push('/');
+            }, 1000);
             
         }
 

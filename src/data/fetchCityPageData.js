@@ -1,10 +1,11 @@
-import { apiUrl } from "@/utils/utils";
 import { getData } from "./getData";
+import { propertyService } from "@/services/propertyService";
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export async function fetchCityPageData(cityId) {
     return Promise.all([
-        getData(`${apiUrl}/properties/?limit=10`), 
-        getData(`${apiUrl}/properties?city_id=${cityId}`),
-        getData(`${apiUrl}/cities/${cityId}`),
+        propertyService.getWithinLimit(10),
+        propertyService.getByCityId(cityId),
+        getData(`${BASE_URL}/cities/${cityId}`),
     ])
 }

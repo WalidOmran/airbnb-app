@@ -6,27 +6,35 @@ import SearchResult from "@/components/search/SearchResult";
 import getDataForServer from "@/data/getDataForServer";
 import { apiUrl } from "@/utils/utils";
 import { getData } from "@/data/getData";
+import { cityService } from "@/services/cityService";
 
 
 const Search = async ({searchParams}) => {
     console.log(searchParams);
-    const {location , startDate , endDate , numOfGuests} = searchParams;
+    const {location , startDate , endDate , numOfGuests} = await searchParams;
     let formatedStartDate;
     let formatedEndDate;
+    let range = "Anytime";
     if(startDate && endDate) {
-       formatedStartDate = format(new Date(startDate), 'dd MMMM yy');
-       formatedEndDate = format(new Date(endDate), 'dd MMMM yy');
+        try {
+            const formatedStartDate = format(new Date(startDate), 'dd MMMM yy');
+            const formatedEndDate = format(new Date(endDate), 'dd MMMM yy');
+            range = `${formatedStartDate} - ${formatedEndDate}`;
+        } catch (err) {
+            range = "Invalid dates";
+        }
     }
 
-const range = `${formatedStartDate} - ${formatedEndDate}`;
 
 
-   const city = await getData(`${apiUrl}/cities?name=${location}`);
-   const cityData = Array.isArray(city) && city.length > 0 ? city[0] : null;
-   console.log("city : " + cityData);
+   let cityData = null;
+   if (location) {
+       cityData = await cityService.getByName(location);
+   }
+
   return (
     <>
-        <Header placeholder={`${location} | ${range} | ${numOfGuests} guests`}/> 
+        <Header placeholder={`${location || 'Anywhere'} | ${range} | ${numOfGuests} guests`}/> 
         <main>
             <section className="min-h-screen">
                 <div className="container">
@@ -34,8 +42,15 @@ const range = `${formatedStartDate} - ${formatedEndDate}`;
                     <SearchFilters />
                    
                     
-                    <SearchResult cityId={cityData.id} />
-                  
+                    
+                    {cityData ? (
+                            <SearchResult cityId={cityData.id} />
+                        ) : (
+                            <div className="py-20 text-center">
+                                <h3 className="text-xl font-bold">No results found for &quot;{location}&quot;</h3>
+                                <p className="text-gray-500">Try searching for another city like London or Paris.</p>
+                            </div>
+                        )}
                    
                     
                     

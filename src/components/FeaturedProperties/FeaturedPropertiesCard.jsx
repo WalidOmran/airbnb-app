@@ -28,7 +28,7 @@ const FeaturedPropertiesCard = ({item ,totalSlides}) => {
 
                     
             </div>
-            <Link  href={`/Property/${item.id}`} className=''>
+            <Link  href={`/property/${item.id}`} className=''>
             
                 <div className='w-full '>
                     <div className='relative h-70 w-[100%] bg-gray-100 rounded-lg'>
