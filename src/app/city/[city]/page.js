@@ -17,16 +17,18 @@ const CityPage = async ({ params } = {}) => {
   
   const resolvedParams = await params;
 
-  const city = resolvedParams?.city;
-
-  if (!city) return notFound();
-  const cityNum = parseInt(decodeURIComponent(city), 10);
-  if (Number.isNaN(cityNum)) return notFound();
+  // const city = resolvedParams?.city;
+  const cityName = resolvedParams?.city;
+  if (!cityName) return notFound();
+  const decodedCityName = decodeURIComponent(cityName);
+  //const cityNum = parseInt(decodeURIComponent(city), 10);
+  // if (Number.isNaN(cityNum)) return notFound();
 
   try {
-    const [allProperties , cityProperties , cityItem] = await fetchCityPageData(cityNum);
+    const [allProperties , cityProperties , cityItem] = await fetchCityPageData(decodedCityName);
     
     if(!cityItem ) return notFound();
+    
     const cityName = cityItem?.name ?? "Unknown City";
 
     return (

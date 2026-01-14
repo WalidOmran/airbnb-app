@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "London",
-      "image_url": "/cities/london.jpg",
+      "image_url": "/cities/London.jpg",
       "postal_code": "SW1A",
       "location": {
         "latitude": 51.5074,
