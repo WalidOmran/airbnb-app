@@ -1,5 +1,3 @@
-import { BASE_URL } from "@/utils/utils";
-import { getData } from "./getData";
 import { propertyService } from "@/services/propertyService";
 import { cityService } from "@/services/cityService";
 

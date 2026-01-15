@@ -5,9 +5,7 @@ import CityProperties from "@/components/FeaturedCities/CityProperties";
 import ErrorFallback from "@/components/FeaturedCities/ErrorFallback";
 import { generateCityMetadata } from "@/utils/metadataHelpers";
 import { fetchCityPageData } from "@/data/fetchCityPageData";
-import { propertyService } from "@/services/propertyService";
-import { cityService } from "@/services/cityService";
-import { BASE_URL } from "@/utils/utils";
+
 
 
 
@@ -35,14 +33,11 @@ const CityPage = async ({ params } = {}) => {
     return (
       <>
         <Header />
-        {cityName && <h1 className="text-3xl font-semibold text-center my-8">Properties in {cityName}</h1>}
         <CityProperties
           propertiesList={cityProperties}
           title={`Vacation rentals according to their classification ${cityName}`}
           desc="Information confirmed by guests: These accommodations received high ratings for location, cleanliness, and other factors."
         />
-
-    
         <CityPropertiesFeatures cityName={cityName} />
         <CityProperties propertiesList={allProperties} title="Explore properties in other cities" />
       </>

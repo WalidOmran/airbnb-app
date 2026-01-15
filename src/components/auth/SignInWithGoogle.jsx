@@ -7,7 +7,7 @@ const SignInWithGoogle = ({ loading}) => {
         <button
             className="cursor-pointer px-4 py-2 rounded-full border"
             disabled={loading}
-            onClick={() => signIn("google")}
+            onClick={() => signIn("google", { callbackUrl: "/" })}
             aria-label="Sign in with Google"
         > 
             Google
