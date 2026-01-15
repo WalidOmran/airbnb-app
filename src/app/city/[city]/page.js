@@ -5,6 +5,9 @@ import CityProperties from "@/components/FeaturedCities/CityProperties";
 import ErrorFallback from "@/components/FeaturedCities/ErrorFallback";
 import { generateCityMetadata } from "@/utils/metadataHelpers";
 import { fetchCityPageData } from "@/data/fetchCityPageData";
+import { propertyService } from "@/services/propertyService";
+import { cityService } from "@/services/cityService";
+import { BASE_URL } from "@/utils/utils";
 
 
 
@@ -16,24 +19,23 @@ export async function generateMetadata({ params }) {
 const CityPage = async ({ params } = {}) => {
   
   const resolvedParams = await params;
-
-  // const city = resolvedParams?.city;
-  const cityName = resolvedParams?.city;
-  if (!cityName) return notFound();
-  const decodedCityName = decodeURIComponent(cityName);
-  //const cityNum = parseInt(decodeURIComponent(city), 10);
-  // if (Number.isNaN(cityNum)) return notFound();
+  const cityId = resolvedParams?.city;
+  if (!cityId) return notFound();
+  
+  const decodedCityId = decodeURIComponent(cityId);
+  
 
   try {
-    const [allProperties , cityProperties , cityItem] = await fetchCityPageData(decodedCityName);
-    
-    if(!cityItem ) return notFound();
-    
-    const cityName = cityItem?.name ?? "Unknown City";
+   const [allProperties , cityProperties , cityData] = await fetchCityPageData(decodedCityId);
+
+    if(!cityData ) return notFound();
+
+    const cityName = cityData?.name ?? "Unknown City";
 
     return (
       <>
         <Header />
+        {cityName && <h1 className="text-3xl font-semibold text-center my-8">Properties in {cityName}</h1>}
         <CityProperties
           propertiesList={cityProperties}
           title={`Vacation rentals according to their classification ${cityName}`}
@@ -42,7 +44,7 @@ const CityPage = async ({ params } = {}) => {
 
     
         <CityPropertiesFeatures cityName={cityName} />
-        <CityProperties propertiesList={allProperties} title="Explore Other Cities" />
+        <CityProperties propertiesList={allProperties} title="Explore properties in other cities" />
       </>
     );
   } catch (error) {

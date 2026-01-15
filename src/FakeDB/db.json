@@ -230,16 +230,21 @@
       "image": "https://lh3.googleusercontent.com/a/ACg8ocKpssA5ra6iww3rdwwDZ20MApWeAAfXY_BXTKAfeAxg1zKy86wZ=s96-c",
       "provider": "google"
     },
-    {
-      "password": "$2b$10$n7WlGIqzOvG8ebV5iyKRMei1rZto1.UJkE5x4jqP.LVviHuMrWy8.",
-      "id": "dd0c37ef-ae6b-4255-a165-9bff3b654427"
-    },
+   
     {
       "id": "5a518d06-3b84-43e1-9b18-7c164350d1f5",
       "name": "Walid",
       "email": "wa33@gmail.com",
       "phone": "14545446665466322",
       "password": "$2b$12$KCcj.AFf0D3MJmpG6ZDK3enALQxpsXq.zBNyYBup//tr5FsqGIizq",
+      "provider": "credentials"
+    },
+    {
+      "id": "be62fad6-0563-4695-a1d8-47bb0d8682ec",
+      "name": "ali",
+      "email": "ali22@gmail.com",
+      "phone": "12235665525",
+      "password": "$2b$12$Q6EDTULHEGLT04nIWW6E5eOZEyCDWOzXK7JHIDsoWjN1A09wMeSgu",
       "provider": "credentials"
     }
   ],
