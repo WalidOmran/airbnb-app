@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 
 
+import logger from "@/utils/logger";
+
 export const getData = async (urlPath, options = {}) => {
   try {
     const res = await fetch(urlPath, {
@@ -19,7 +21,7 @@ export const getData = async (urlPath, options = {}) => {
 
     return await res.json();
   } catch (error) {
-    console.error('Error fetching data: ', error);
+    logger.error('Error fetching data: ', error);
     return null; 
   }
 };

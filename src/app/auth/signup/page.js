@@ -3,6 +3,7 @@ import { useState } from "react";
 import { signUpSchema } from "@/app/lib/schemas/signupSchema";
 import { PostUserData } from "@/data/postUserData";
 import { apiUrl } from "@/utils/utils";
+import logger from "@/utils/logger";
 import { useRouter } from "next/navigation";
 import { v4 as uuidv4 } from 'uuid';
 import bcrypt from 'bcryptjs';
@@ -103,7 +104,7 @@ const SignUpPage = () => {
             setErrors(fieldErrors);
             
           } else {
-            console.error("Unexpected error:", error);
+            logger.error("Unexpected error:", error);
             setErrors({ general: "An unexpected error occurred. Please try again later." });
           }
         } finally {

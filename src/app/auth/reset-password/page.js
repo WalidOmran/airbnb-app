@@ -54,7 +54,7 @@ function ResetPasswordContent() {
             const resetPasswordSuccess = await handleResetPassword(token, validatedData.password, setErrors, setLoading);
 
             if(!resetPasswordSuccess) {
-                console.log('Failed to reset password');
+                logger.warn('Failed to reset password');
                 setErrors({ general: 'Failed to reset password. Please try again. 9' });
                 setLoading(false);
                 return;
@@ -70,7 +70,7 @@ function ResetPasswordContent() {
         } catch(err) {
             setErrors({ general: 'Failed to reset password. Please try again later.88' });
             setLoading(false);
-            console.error('Error resetting password: ', err);
+            logger.error('Error resetting password: ', err);
         }
     }
 

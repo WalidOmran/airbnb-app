@@ -7,10 +7,11 @@ import getDataForServer from "@/data/getDataForServer";
 import { apiUrl } from "@/utils/utils";
 import { getData } from "@/data/getData";
 import { cityService } from "@/services/cityService";
+import logger from "@/utils/logger";
 
 
 const Search = async ({searchParams}) => {
-    console.log(searchParams);
+    logger.log(searchParams);
     const {location , startDate , endDate , numOfGuests} = await searchParams;
     let formatedStartDate;
     let formatedEndDate;

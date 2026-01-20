@@ -5,7 +5,7 @@ import { apiUrl } from "@/utils/utils";
 import Image from "next/image";
 
 
-const SearchCitiesList = ({input,setInput}) => {
+const SearchCitiesList = ({input,setInput,handleSubmit}) => {
     const { data, isLoading, error } = useAxiosQuery(`${apiUrl}/cities`);
     const filterCities = data?.filter(city =>
                 city.name.toLowerCase().includes(input.toLowerCase())
@@ -13,6 +13,9 @@ const SearchCitiesList = ({input,setInput}) => {
 
     const handleClick = (cityName) =>{
         setInput(cityName);
+        console.log("input : " + input);
+        // handleSubmit
+
     }
 
     const CityItems = ({ citiesList }) => {

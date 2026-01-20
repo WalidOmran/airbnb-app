@@ -6,6 +6,8 @@
  * @returns {Promise<{data:any, status:number|null, error:Error|null}>}
  */
 import NotFound from '@/app/not-found';
+import logger from "@/utils/logger";
+
 const getDataForServer = async (urlPath, options = {}, opts = {}) => {
   const { revalidate = 60, fallback = null, throwOnError = false } = opts;
 
@@ -18,14 +20,14 @@ const getDataForServer = async (urlPath, options = {}, opts = {}) => {
       if (status === 404) { import('next/navigation').then(m => m.notFound()); }
 
       if (throwOnError) throw err;
-      console.error(err);
+      logger.error(err);
       return { data: fallback, status, error: err };
     }
 
     const data = await res.json();
     return { data, status, error: null };
   } catch (error) {
-    console.error('Error fetching data:', error);
+    logger.error('Error fetching data:', error);
     if (throwOnError) throw error;
     return { data: fallback, status: null, error };
   }

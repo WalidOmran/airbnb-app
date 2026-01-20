@@ -3,6 +3,7 @@ import { useEffect, useState, useMemo } from 'react';
 import { getData } from '@/data/getData';
 import { apiUrl } from '@/utils/utils';
 import { getDisabledDatesFromBookings } from '@/utils/dateUtils';
+import logger from '@/utils/logger';
 
 /**
  * Custom hook to fetch and calculate disabled dates for a property.
@@ -27,7 +28,7 @@ export const useDisabledDates = (propertyId) => {
         setBookings(propertyBookings);
         setError(null);
       } catch (err) {
-        console.error('Error fetching bookings:', err);
+        logger.error('Error fetching bookings:', err);
         setError(err);
       } finally {
         setIsLoading(false);

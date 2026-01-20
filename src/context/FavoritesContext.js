@@ -1,88 +1,88 @@
 "use client";
 import { Actions, favoritesReducer } from "@/reducers/favoritesReducer";
 import { initialFavoritesState, apiUrl } from "@/utils/utils";
-import { createContext, useCallback, useContext, useEffect, useReducer } from "react";
-import axios from 'axios';
+import logger from "@/utils/logger";
+import { createContext, useCallback, useContext, useEffect, useReducer, useState } from "react";
+import { useSession } from "next-auth/react";
+import { favoriteService } from "@/services/favoriteService";
+import LoginModal from "@/components/modals/LoginModal";
+
+
 const FavoritesContext = createContext({});
 
 
 export const FavoritesContextProvider = ({children}) => {
-    const FavoritesURLpath = `${apiUrl}/favorites`;
+    const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
     const [favoritesState,favoritesDispatch ] = useReducer(favoritesReducer,initialFavoritesState);
-    // Add To Api
-    const AddItemToDB = async (URLpath,item) => {
+    const { data: session } = useSession();
+    const userId = session?.user?.id;
+    
+    const loadFavorites = useCallback(async ()=> {
+        if (!userId) return;
+        try {
+            const data = await favoriteService.getAll(userId);
+            favoritesDispatch({type: Actions.GET_FAVORITES, payload: data});
+
+        } catch (error) {
+            logger.error("Failed to load favorites", error);
+        }
+    },[userId]);
+     // Handle Add Favorite 
+    const handleAddFavorite = async (item) => {
+       
+       if (!userId) {
+            setIsLoginModalOpen(true);
+            return;
+        }
+        const favoriteData = { ...item, userId: userId };
+
+        favoritesDispatch({ type: Actions.ADD_TO_FAVORITES, payload: favoriteData });
 
         try {
-            const res = await axios.post(URLpath,item);
-            if(res.status === 200 || res.status ===201) {
-                console.log("Item added to DB");
-            }else {
-                console.log("err:" + res.statusText);
-            }
+            await favoriteService.add(favoriteData);
         } catch (error) {
-            console.log("error : ", error);
+            logger.error("DB Add Failed", error);
         }
-    }
-    // Remove From Api
-    const RemoveItemFromDB = async (URLpath,itemId) => {
-        try {
-            const res = await axios.delete(`${URLpath}/${itemId}`);
-            if(res.status === 200 || res.status === 204) {
-                console.log("Item removed from DB");
-            }else {
-                console.log("err :" + res.statusText);
-            }
-        } catch (error) {
-            console.log("err : " + error);
-        }
-        
-    }
-     // Handle Add Favorite 
-    const handleAddFavorite = (item) => {
-       // setIsFavorite(true);
-        favoritesDispatch({ type: Actions.ADD_TO_FAVORITES, payload: item });
-        AddItemToDB(FavoritesURLpath,item);
     }
     // Handle Remove Favorite 
-    const handleRemoveFavorite = (item) => {
-            // setIsFavorite(false);
+    const handleRemoveFavorite = async (item) => {
             favoritesDispatch({type: Actions.REMOVE_FROM_FAVORITES, payload: item });
-            RemoveItemFromDB(FavoritesURLpath, item.id);
-    }
-
-    const initialLoadFavorites =   useCallback(async (URLpath) => {
-        try {
-            const res = await axios.get(FavoritesURLpath);
-            if(res.status === 200) {
-                const data = res.data;
-                favoritesDispatch({type: Actions.GET_FAVORITES , payload: data});
-            }else {
-                console.log('err :' + res.statusText);
+            try {
+                await favoriteService.delete(item.id, userId);
+            } catch (error) {
+                logger.error("DB Remove Failed", error);
             }
-        } catch (error) {
-            console.log("error :  " , error);
-        }
-    },[FavoritesURLpath]);
-
-    useEffect(() => {
-        initialLoadFavorites();
-    }, [initialLoadFavorites]);
-
-    useEffect(() => {
-    if (favoritesState.items.length > 0) { 
-        localStorage.setItem('favoritesState', JSON.stringify(favoritesState));
     }
-}, [favoritesState]);
+    useEffect(() => {
+        if (!userId) {
+            favoritesDispatch({ type: Actions.GET_FAVORITES, payload: [] });
+        } else {
+            loadFavorites();
+        }
+    }, [loadFavorites,userId]);
+   
+    
+    useEffect(() => {
+        localStorage.setItem('favoritesState', JSON.stringify(favoritesState));
+    }, [favoritesState]);
+
+
     return (
         <FavoritesContext.Provider value={{
             favoritesState : favoritesState,
             favoritesDispatch,
             handleAddFavorite,
-            handleRemoveFavorite
+            handleRemoveFavorite,
+            isLoginModalOpen,
+            setIsLoginModalOpen
 
 
         }}>
             {children}
+            <LoginModal
+                isOpen={isLoginModalOpen} 
+                onClose={() => setIsLoginModalOpen(false)} 
+            />
         </FavoritesContext.Provider>
     )
 };

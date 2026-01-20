@@ -1,6 +1,7 @@
 'use client';
 import axios from "axios";
 import { toast } from "sonner";
+import logger from "@/utils/logger";
 
 
 export const  PostData = async (apiUrl,newItem)=>{
@@ -9,10 +10,9 @@ export const  PostData = async (apiUrl,newItem)=>{
    .then(
     res =>  {
             toast.success('The reservation was successful ! 🎉');
-            // console.log("Add is Ok")
         }
 
-).catch((error) => console.log(error));
+).catch((error) => logger.error(error));
 }
 
 

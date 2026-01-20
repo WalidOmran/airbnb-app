@@ -5,7 +5,7 @@ const PropertyAmenities = ({property}) => {
         <div className="w-1/3 grid grid-cols-2 my-1">
             { 
             property.amenities.map((item) => 
-            <p className="mb-2">{item}  </p>) 
+            <p className="mb-2" key={item}>{item}  </p>) 
             } 
         </div>
     </div>

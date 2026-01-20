@@ -3,6 +3,7 @@
  *
  */
 import axios from 'axios';
+import logger from "@/utils/logger";
 
 const getDataForClient = async (urlPath, config = {}, throwOnError = false) => {
   try {
@@ -13,7 +14,7 @@ const getDataForClient = async (urlPath, config = {}, throwOnError = false) => {
     return { data, status, error: null };
   } catch (error) {
     const status = error?.response?.status ?? null;
-    console.error('getDataForClient error:', error);
+    logger.error('getDataForClient error:', error);
 
     if (throwOnError) throw error;
     return { status, error };

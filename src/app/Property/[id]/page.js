@@ -28,8 +28,6 @@ const page = async ({params }) => {
     <Header /> 
       <main className="py-12">
         <div className="container">
-          test : {property.title}
-          
             { 
             property ? 
                 <section className="flex flex-col "> 

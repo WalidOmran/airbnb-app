@@ -1,5 +1,6 @@
 import { PostUserData } from "@/data/postUserData";
 import { apiUrl, BASE_URL } from "@/utils/utils";
+import logger from "@/utils/logger";
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
@@ -26,10 +27,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
        
         const res = await fetch(`${BASE_URL}/users?email=${credentials.email}`);
         const users = await res.json();
-        console.log("Total users fetched:", users.length);
+        logger.log("Total users fetched:", users.length);
         const user = Array.isArray(users) && users.length > 0 ? users[0] : null;
         if (!user) {
-          console.log("❌ User not found with email:", credentials?.email);
+          logger.log("❌ User not found with email:", credentials?.email);
           return null;
            
         }
@@ -37,7 +38,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         const passwordMatch = await bcrypt.compare(credentials?.password || "", user.password);
 
         if(passwordMatch) {
-          console.log("Login successful");
+          logger.log("Login successful");
           return {
             id: user.id,
             name: user.userName || user.name,
@@ -46,12 +47,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         };
 
 
-        console.log("❌ Password mismatch");
+        logger.log("❌ Password mismatch");
         return null;
         
           
         } catch (error) {
-          console.error("🔥 Auth error:", error.message);
+          logger.error("🔥 Auth error:", error.message);
           return null;
         }
         
@@ -67,13 +68,13 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
 
      async profile(profile, tokens) {
-        console.log("🔍 Google profile:", profile.email);
+        logger.log("🔍 Google profile:", profile.email);
 
         const allUser = await fetch(`${apiUrl}/users`).then(res => res.json());
         let user = allUser.find(user => user.email === profile.email);
 
         if(!user) {
-          console.log("✅ Creating Google user:", profile.email);
+          logger.log("✅ Creating Google user:", profile.email);
           const newUser = await PostUserData(`${apiUrl}/users`, {
             id: uuidv4(),
             name: profile.name,
@@ -83,7 +84,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           });
           return newUser;
         };
-        console.log("Google user profile found :", profile);
+        logger.log("Google user profile found :", profile);
         return user;
       },
   })
@@ -110,7 +111,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
     async jwt({ token, user, account}) {
       if (user) {
-        console.log("🔑 JWT user.id:", user.id);
+        logger.log("🔑 JWT user.id:", user.id);
         token.id = user.id;
       }
 
@@ -118,13 +119,13 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       if(account?.provider === 'google') {
         const googleEmail = user?.email || token?.email;
         token.id = `google-${googleEmail.split("@")[0]}`;
-        console.log("🔑 JWT Google token.id:", token.id);
+        logger.log("🔑 JWT Google token.id:", token.id);
       }
       return token;
     }, 
     async session({session, token}) {
       if (token?.id) {
-        console.log("🔑 Session token.id:", token.id);
+        logger.log("🔑 Session token.id:", token.id);
         session.user.id = token.id;
         session.user.userId = token.id;
       }

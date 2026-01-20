@@ -67,7 +67,7 @@ const SearchBar = ({placeholder}) => {
             <MagnifyingGlassIcon  className="h-8 p-2 bg-red-400 text-white rounded-full cursor-pointer"/>
           </button>
         </form>
-        {(open || input) && <SearchCitiesList  setInput={setInput} input={input} />}
+        {(open || input) && <SearchCitiesList  setInput={setInput} input={input} handleSubmit={handleSubmit} />}
          {/* {input && <SearchOption setInput={setInput} handleSubmit={handleSubmit} searchData={searchData} searchDispatch={searchDispatch} />} */}
     </div>
    

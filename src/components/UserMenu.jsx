@@ -1,6 +1,7 @@
 "use client";
 
 import { signOut, useSession } from "next-auth/react";
+import logger from "@/utils/logger";
 import Link from "next/link";
 import { useState } from "react";
 import UserMenuOptions from "./user/UserMenuOptions";
@@ -17,7 +18,7 @@ const UserMenu = () => {
         setOpen((open) => !open);
     }
 
-    console.log("UserMenu session:", session);
+    logger.log("UserMenu session:", session);
 
 
   return (

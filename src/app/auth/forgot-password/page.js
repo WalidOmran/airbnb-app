@@ -1,11 +1,11 @@
 "use client";
 
-import { sendResetEmail } from "@/app/lib/resend";
 import AuthLayout from "@/components/auth/AuthLayout";
 import FormItem from "@/components/form/FormItem";
 import Header from "@/components/header/Header";
 import { PostData } from "@/data/postData";
 import { apiUrl } from "@/utils/utils";
+import logger from "@/utils/logger";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -18,7 +18,7 @@ const ForgotPasswordPage = () => {
     e.preventDefault();
     setErrors({});
     setLoading(true);
-     console.log("Submitting forgot password for email:", email);
+     logger.log("Submitting forgot password for email:", email);
     try {
      
       const allUsers = await fetch(`${apiUrl}/users`).then(res => res.json());
@@ -45,13 +45,13 @@ const ForgotPasswordPage = () => {
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ email: existingUser.email, token: resetToken })
                       });
-         console.log(`🔗 Reset link: http://localhost:3000/auth/reset-password?token=${resetToken}`);
+         logger.log(`🔗 Reset link: http://localhost:3000/auth/reset-password?token=${resetToken}`);
 
         if(emailRes.ok ){
             setSuccessMsg('✅ Reset link sent! Check your email (or console).');
-            console.log('✅ Email API success');
+            logger.log('✅ Email API success');
           } else {
-            console.log('📧 Demo mode - check console');
+            logger.log('📧 Demo mode - check console');
             setSuccessMsg('✅ Reset link ready (console)');
           }
          

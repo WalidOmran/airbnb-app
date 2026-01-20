@@ -1,6 +1,7 @@
 import { PostData } from "@/data/postData";
 import { toast } from "sonner";
 import { apiUrl } from "./utils";
+import logger from "./logger";
 
 export const isBookingExisting = (bookings, propertyId) =>
   bookings.filter(item => item.property_id == propertyId);
@@ -30,7 +31,7 @@ export const handleDateConflict = (conflictingBookings) => {
 
 export const handleNoConflict = () => {
       // Proceed with reservation
-      console.log("No date conflict. Proceeding with reservation...");
+      logger.log("No date conflict. Proceeding with reservation...");
       toast.loading('The property is available for the selected dates. Proceeding with reservation...');
 
 }

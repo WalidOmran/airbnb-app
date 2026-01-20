@@ -6,6 +6,7 @@ import { PostData } from "@/data/postData";
 import { getData } from "@/data/getData";
 import { apiUrl } from "@/utils/utils";
 import { useReservation } from "@/context/ReservationContext";
+import logger from "@/utils/logger";
 
 const useReservationBooking = ({propertyId, setOpenReservationCard}) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -36,14 +37,14 @@ const useReservationBooking = ({propertyId, setOpenReservationCard}) => {
   };
 
   const handleNoConflict = () => {
-    console.log("No date conflict. Proceeding with reservation...");
+    logger.log("No date conflict. Proceeding with reservation...");
     toast.success('The property is available! Processing your reservation...');
   };
 
   const handleSendReservationData = async () => {
     try {
       setIsLoading(true);
-      console.log("Sending reservation data:", reservationData);
+      logger.log("Sending reservation data:", reservationData);
       await PostData(`${apiUrl}/bookings`, reservationData);
       setOpenReservationCard(false);
       toast.success('Reservation confirmed successfully!');

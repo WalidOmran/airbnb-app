@@ -5,7 +5,7 @@ import Link from 'next/link';
 import FavoriteButton from '../FavoriteButton';
 
 const ListingCard = ({item}) => {
-
+console.log(item);
   
   return (
             <Link  href={`/property/${item.id}`} className='relative z-8'>
@@ -29,11 +29,11 @@ const ListingCard = ({item}) => {
         <div className='flex justify-between items-end pt-5'>
           <p className='flex items-center text-yellow-500'>
             <StarIcon className="h-6 w-6" />
-            {item.review.rating}
+            {/* {item.review.rating} */}
           </p>
           <div className='text-right'>
            <p className='text-gray-500'>
-                <span className='text-2xl font-semibold text-red-500'>{item.price_per_night}$</span> 
+                {/* <span className='text-2xl font-semibold text-red-500'>{item.price_per_night}$</span>  */}
                 <span className='text-sm'> per-night</span>
            </p>
             <p className='text-sm font-extralight'>{item.total}</p>

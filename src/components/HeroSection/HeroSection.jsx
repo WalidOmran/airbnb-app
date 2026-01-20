@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import './HeroSection.css';
 import Image from 'next/image';
 
 const HeroSection = () => {

@@ -1,9 +1,11 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { getData } from '@/data/getData';
+import logger from '@/utils/logger';
 import SectionHeader from '../SectionHeader'
 import CityItem from './CityItem'
 import { apiUrl } from '@/utils/utils';
+import CitiesLoading from './CitiesLoading';
 
 export default function FeaturedCities() {
   const [cities, setCities] = useState([]);
@@ -11,19 +13,22 @@ export default function FeaturedCities() {
 
   useEffect(() => {
     getData(`${apiUrl}/cities`).then(data => {
-      console.log('CITIES DATA:', data);
+      logger.log('CITIES DATA:', data);
       const citiesData = data?.cities || data || [];
       setCities(citiesData);
       setLoading(false);
     });
   }, []);
 
-  if (loading) return <div>Loading cities...</div>;
+ 
 
   return (
     <section className='w-full'>
       <div className="container">
         <SectionHeader title="Explore Featured Cities" />
+        {loading && <CitiesLoading /> }
+
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 my-8">
           {cities.map((item) => 
             <CityItem key={item.id} item={item}/>

@@ -1,3 +1,5 @@
+import logger from "@/utils/logger";
+
 export const apiRequest = async (urlPath, options={}) => {
     const method = options.method || 'GET';
 
@@ -46,7 +48,7 @@ export const apiRequest = async (urlPath, options={}) => {
 
         return await res.json();
     } catch (error) {
-        console.error(`Error during ${method} request to ${urlPath}:`, error);
+        logger.error(`Error during ${method} request to ${urlPath}:`, error);
         return null;
     }
 }
