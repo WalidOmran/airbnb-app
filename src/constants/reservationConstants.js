@@ -6,6 +6,7 @@ export const ReservationActions = {
   SET_GUEST_NUM: "SET_GUEST_NUM",
   SET_NIGHTS: "SET_NIGHTS", 
   SET_TOTAL_PRICE: "SET_TOTAL_PRICE",
+  RESET_RESERVATION: "RESET_RESERVATION",
 };
 
 export const initialReservationData = {

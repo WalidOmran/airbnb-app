@@ -31,7 +31,7 @@ export const favoriteService = {
     
     delete: async (propertyId, userId) => {
         const recordIdToDelete = `fav_${String(userId)}_${String(propertyId)}`;
-    //   
+    
         return await apiRequest(`${BASE_URL}/favorites/${recordIdToDelete}`, {
             method: 'DELETE',
         });

@@ -1,4 +1,4 @@
-import { ReservationActions } from "@/constants/reservationConstants";
+import {initialReservationData, ReservationActions } from "@/constants/reservationConstants";
 
 /**
  * Reservation Reducer to manage reservation state.
@@ -22,6 +22,9 @@ export const reservationReducer = (state, action) => {
           return { ...state, nights: action.payload};
         case ReservationActions.SET_TOTAL_PRICE:
           return {...state, totalPrice: action.payload};
+        case ReservationActions.RESET_RESERVATION:
+          return { ...initialReservationData };
+          
           default:
             return state
       }

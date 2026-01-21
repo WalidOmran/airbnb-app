@@ -18,7 +18,8 @@ const UserMenu = () => {
         setOpen((open) => !open);
     }
 
-    logger.log("UserMenu session:", session);
+    // logger.log("UserMenu session:", session);
+    // {session?.user ? <LoggedInLinks /> : <LoggedOutLinks />}
 
 
   return (

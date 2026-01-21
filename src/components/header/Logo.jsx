@@ -10,8 +10,10 @@ const Logo = () => {
             width={100}
             height={50}
             className='object-contain object-left'
-            priority
+            style={{ width: '50', height: '100' }} 
             />
+
+
     </Link>
   )
 }

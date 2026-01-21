@@ -1,7 +1,7 @@
 import useReservationBooking from "@/customHooks/useReservationBooking";
 
-const ReservationButtons = ({ property , setOpenReservationCard }) => {
-    const {isLoading, handleCheckAvailability} = useReservationBooking({propertyId: property.id , setOpenReservationCard});
+const ReservationButtons = ({ property , setOpenReservationCard ,openAuthModal }) => {
+    const {isLoading, handleCheckAvailability} = useReservationBooking({propertyId: property.id , setOpenReservationCard,openAuthModal});
     
   return (
     <div className='flex items-end justify-between px-0 md:px-6 md:px-4 my-6'>
@@ -23,7 +23,10 @@ const ReservationButtons = ({ property , setOpenReservationCard }) => {
           ${isLoading ? 'bg-red-200 cursor-not-allowed' : 'bg-red-400 text-white hover:bg-red-500'}`}
         aria-label="Confirm reservation"
       >
-        {isLoading ? "Processing..." : "Confirm Booking"}
+        {isLoading ? (
+           <span className="flex items-center gap-2">Processing...</span>) 
+           : ("Confirm Booking")
+        }
       </button>
     </div>
   );
