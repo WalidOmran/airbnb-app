@@ -19,11 +19,12 @@ const FavoriteButton = ({item}) => {
             onClick={toggleFavorite} 
             className={`${isFavorite ? 'bg-black' : 'bg-white hover:bg-black'} rounded-full p-2 z-10 shadow-md hover:shadow-lg active:scale-90 transition duration-200 ease-out`}
             aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+            title={isFavorite ? "Remove from favorites" : "Add to favorites"}
         >
             {isFavorite ? (
-                <HeartSolid className="h-6 w-6 cursor-pointer hover:scale-105 text-yellow-400 transform transition duration-200 ease-out" />
+                <HeartSolid className="h-6 w-6 cursor-pointer hover:scale-105 text-red-500 transform transition duration-200 ease-out" />
             ) : (
-                <HeartOutline className="h-6 w-6 text-gray-400 cursor-pointer hover:scale-105 hover:text-yellow-400 transform transition duration-200 ease-out" />
+                <HeartOutline className="h-6 w-6 text-gray-400 cursor-pointer hover:scale-105 hover:text-red-500 transform transition duration-200 ease-out" />
             )}
         </button>
                

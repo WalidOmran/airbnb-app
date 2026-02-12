@@ -5,7 +5,7 @@ import { HeartIcon as HeartOutline  } from "@heroicons/react/24/outline";
 import { HeartIcon as HeartSolid , StarIcon } from "@heroicons/react/24/solid";
 import { useFavoritesContext } from '@/context/FavoritesContext';
 import { useSession } from "next-auth/react";
-import FavoriteButton from '../FavoriteButton';
+import FavoriteButton from '../property/card/FavoriteButton';
 const FeaturedPropertiesCard = ({item ,totalSlides}) => {
     const { data: session } = useSession();
     const userId = session?.user?.id;
@@ -46,7 +46,7 @@ const FeaturedPropertiesCard = ({item ,totalSlides}) => {
                                 <span className='text-sm'> per-night</span>
                             </p>
                             <p className='flex items-center justify-end text-sm'>
-                                <span className=''>{item.review.rating}</span> 
+                                <span className=''>{item.review?.rating || "New"}</span> 
                                 <span className='flex items-center ml-1'>
                                     <StarIcon className="h-4 w-4 text-yellow-400" />
                                 </span>

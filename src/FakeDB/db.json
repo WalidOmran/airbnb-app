@@ -810,199 +810,40 @@
   ],
   "bookings": [
     {
-      "id": "1",
-      "propertyId": 1,
-      "userId": 2,
-      "startDate": "2025-09-01",
-      "endDate": "2025-09-05",
-      "totalPrice": 600,
-      "status": "confirmed"
-    },
-    {
-      "id": "2",
-      "propertyId": 3,
-      "userId": 1,
-      "startDate": "2025-10-10",
-      "endDate": "2025-10-15",
-      "totalPrice": 500,
-      "status": "pending"
-    },
-    {
-      "id": "3",
-      "propertyId": 5,
-      "userId": 4,
-      "startDate": "2025-11-01",
-      "endDate": "2025-11-07",
-      "totalPrice": 910,
-      "status": "confirmed"
-    },
-    {
-      "id": "res_google-walidomran72_4_1768953600000",
-      "startDate": "2026-01-21",
+      "id": "res_google-walidomran72_5_1769385600000",
+      "startDate": "2026-01-26",
       "endDate": "2026-01-28",
+      "guests": 1,
+      "nights": 3,
+      "totalPrice": 390,
+      "status": "pending",
+      "propertyId": "5",
+      "userId": "google-walidomran72",
+      "createdAt": "2026-01-22T13:38:44.700Z"
+    },
+    {
+      "id": "res_google-walidomran72_9058_1770768000000",
+      "startDate": "2026-02-11",
+      "endDate": "2026-02-13",
       "guests": 2,
-      "nights": 8,
-      "totalPrice": 2880,
+      "nights": 2,
+      "totalPrice": 12,
       "status": "pending",
-      "propertyId": 4,
+      "propertyId": null,
       "userId": "google-walidomran72",
-      "createdAt": "2026-01-21T08:32:51.744Z"
+      "createdAt": "2026-02-08T10:02:30.116Z"
     },
     {
-      "id": "res_google-walidomran72_8_1768953600000",
-      "startDate": "2026-01-21",
-      "endDate": "2026-01-24",
-      "guests": 1,
-      "nights": 4,
-      "totalPrice": 640,
-      "status": "pending",
-      "propertyId": 8,
-      "userId": "google-walidomran72",
-      "createdAt": "2026-01-21T08:35:39.991Z"
-    },
-    {
-      "id": "res_google-walidomran72_8_1769385600000",
-      "startDate": "2026-01-26",
-      "endDate": "2026-01-29",
+      "id": "res_google-walidomran72_9058_1771113600000",
+      "startDate": "2026-02-15",
+      "endDate": "2026-02-17",
       "guests": 2,
-      "nights": 4,
-      "totalPrice": 1280,
-      "status": "pending",
-      "propertyId": 8,
-      "userId": "google-walidomran72",
-      "createdAt": "2026-01-21T11:15:59.728Z"
-    },
-    {
-      "id": "res_google-walidomran72_15_1768953600000",
-      "startDate": "2026-01-21",
-      "endDate": "2026-01-23",
-      "guests": 1,
-      "nights": 3,
-      "totalPrice": 900,
-      "status": "pending",
-      "propertyId": 15,
-      "userId": "google-walidomran72",
-      "createdAt": "2026-01-21T11:18:05.053Z"
-    },
-    {
-      "id": "res_google-walidomran72_15_1769472000000",
-      "startDate": "2026-01-27",
-      "endDate": "2026-01-29",
-      "guests": 1,
-      "nights": 3,
-      "totalPrice": 900,
-      "status": "pending",
-      "propertyId": 15,
-      "userId": "google-walidomran72",
-      "createdAt": "2026-01-21T11:18:31.684Z"
-    },
-    {
-      "id": "res_google-walidomran72_15_1769126400000",
-      "startDate": "2026-01-23",
-      "endDate": "2026-01-25",
-      "guests": 1,
-      "nights": 3,
-      "totalPrice": 900,
-      "status": "pending",
-      "propertyId": 15,
-      "userId": "google-walidomran72",
-      "createdAt": "2026-01-21T11:19:25.340Z"
-    },
-    {
-      "id": "res_google-walidomran72_15_1769731200000",
-      "startDate": "2026-01-30",
-      "endDate": "2026-02-02",
-      "guests": 1,
-      "nights": 4,
-      "totalPrice": 1200,
-      "status": "pending",
-      "propertyId": 15,
-      "userId": "google-walidomran72",
-      "createdAt": "2026-01-21T11:28:18.247Z"
-    },
-    {
-      "id": "res_google-walidomran72_1_1769212800000",
-      "startDate": "2026-01-24",
-      "endDate": "2026-01-26",
-      "guests": 1,
-      "nights": 3,
-      "totalPrice": 450,
-      "status": "pending",
-      "propertyId": 1,
-      "userId": "google-walidomran72",
-      "createdAt": "2026-01-21T11:29:15.472Z"
-    },
-    {
-      "id": "res_google-walidomran72_1_1768953600000",
-      "startDate": "2026-01-21",
-      "endDate": "2026-01-22",
-      "guests": 1,
       "nights": 2,
-      "totalPrice": 300,
+      "totalPrice": 12,
       "status": "pending",
-      "propertyId": 1,
+      "propertyId": null,
       "userId": "google-walidomran72",
-      "createdAt": "2026-01-21T11:29:44.546Z"
-    },
-    {
-      "id": "res_google-walidomran72_1_1769558400000",
-      "startDate": "2026-01-28",
-      "endDate": "2026-01-29",
-      "guests": 1,
-      "nights": 2,
-      "totalPrice": 300,
-      "status": "pending",
-      "propertyId": 1,
-      "userId": "google-walidomran72",
-      "createdAt": "2026-01-21T11:29:54.088Z"
-    },
-    {
-      "id": "res_google-walidomran72_1_1769644800000",
-      "startDate": "2026-01-29",
-      "endDate": "2026-01-30",
-      "guests": 1,
-      "nights": 2,
-      "totalPrice": 300,
-      "status": "pending",
-      "propertyId": 1,
-      "userId": "google-walidomran72",
-      "createdAt": "2026-01-21T11:33:19.181Z"
-    },
-    {
-      "id": "res_google-walidomran72_1_1770076800000",
-      "startDate": "2026-02-03",
-      "endDate": "2026-02-05",
-      "guests": 1,
-      "nights": 3,
-      "totalPrice": 450,
-      "status": "pending",
-      "propertyId": 1,
-      "userId": "google-walidomran72",
-      "createdAt": "2026-01-21T11:33:32.650Z"
-    },
-    {
-      "id": "res_google-walidomran72_1_1769385600000",
-      "startDate": "2026-01-26",
-      "endDate": "2026-01-26",
-      "guests": 1,
-      "nights": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "propertyId": 1,
-      "userId": "google-walidomran72",
-      "createdAt": "2026-01-21T11:41:50.558Z"
-    },
-    {
-      "id": "res_google-walidomran72_1_1770681600000",
-      "startDate": "2026-02-10",
-      "endDate": "2026-02-11",
-      "guests": 1,
-      "nights": 2,
-      "totalPrice": 300,
-      "status": "pending",
-      "propertyId": 1,
-      "userId": "google-walidomran72",
-      "createdAt": "2026-01-21T11:42:25.265Z"
+      "createdAt": "2026-02-08T12:18:56.117Z"
     }
   ],
   "reviews": [
@@ -1047,5 +888,138 @@
       "date": "2025-11-26"
     }
   ],
-  "favorites": []
+  "favorites": [
+    {
+      "id": "fav_google-walidomran72_5",
+      "title": "Charming Apartment in Cardiff",
+      "description": "Comfortable stay with a beautiful sea atmosphere near Cardiff city center.",
+      "city_id": 5,
+      "address": "12 Sea Street, Cardiff",
+      "location": {
+        "latitude": 51.4816,
+        "longitude": -3.1791
+      },
+      "price_per_night": 130,
+      "max_guests": 4,
+      "images": [
+        "/properties/5/01.jpg",
+        "/properties/5/02.jpg"
+      ],
+      "host_id": 5,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Air Conditioning",
+        "Near Beach"
+      ],
+      "review": {
+        "rating": 4.6,
+        "comment": "Cozy and near the beach, perfect for a relaxing holiday."
+      },
+      "userId": "google-walidomran72",
+      "propertyId": "5"
+    },
+    {
+      "id": "fav_google-walidomran72_1",
+      "title": "Luxury Apartment in London",
+      "description": "Modern apartment with three bedrooms close to London's landmarks.",
+      "city_id": 1,
+      "address": "221B Baker Street, London",
+      "location": {
+        "latitude": 51.5237,
+        "longitude": -0.1585
+      },
+      "price_per_night": 150,
+      "max_guests": 4,
+      "images": [
+        "/properties/1/01.jpg",
+        "/properties/1/02.jpg",
+        "/properties/1/03.jpg"
+      ],
+      "host_id": 1,
+      "amenities": [
+        "WiFi",
+        "Kitchen",
+        "Air Conditioning",
+        "Parking",
+        "Smart TV"
+      ],
+      "review": {
+        "rating": 4.7,
+        "comment": "Beautiful apartment in a great location, very comfortable stay."
+      },
+      "userId": "google-walidomran72",
+      "propertyId": "1"
+    },
+    {
+      "id": "fav_google-walidomran72_16",
+      "title": "Cozy Studio in London",
+      "description": "Comfortable studio apartment close to central London.",
+      "city_id": 1,
+      "address": "12 Central Street, London",
+      "location": {
+        "latitude": 51.509,
+        "longitude": -0.134
+      },
+      "price_per_night": 75,
+      "max_guests": 2,
+      "images": [
+        "/properties/16/01.jpg",
+        "/properties/16/02.jpg"
+      ],
+      "host_id": 1,
+      "amenities": [
+        "WiFi",
+        "Heating"
+      ],
+      "review": {
+        "rating": 4.1,
+        "comment": "Cozy studio perfect for short stays."
+      },
+      "userId": "google-walidomran72",
+      "propertyId": "16"
+    },
+    {
+      "id": "fav_google-walidomran72_res_google-walidomran72_9058_1771113600000",
+      "startDate": "2026-02-15",
+      "endDate": "2026-02-17",
+      "guests": 2,
+      "nights": 2,
+      "totalPrice": 12,
+      "status": "pending",
+      "propertyId": "res_google-walidomran72_9058_1771113600000",
+      "userId": "google-walidomran72",
+      "createdAt": "2026-02-08T12:18:56.117Z",
+      "property": {
+        "id": "9058",
+        "title": "test 3",
+        "description": "test tess test ",
+        "price_per_night": 3,
+        "address": "West Mosley Street, Central Retail District, Civic Quarter, City Centre, مانشستر, مانشستر الكبرى, إنجلترا, M2 2EE, المملكة المتحدة",
+        "max_guests": 4,
+        "city_id": 2,
+        "amenities": [
+          "wifi",
+          "ac",
+          "kitchen",
+          "parking",
+          "tv",
+          "pool",
+          "gym",
+          "elevator",
+          "sea_view",
+          "garden"
+        ],
+        "images": [
+          "https://res.cloudinary.com/dzqnfzboa/image/upload/v1770211997/e7mkwux9op24orafyhmw.jpg",
+          "https://res.cloudinary.com/dzqnfzboa/image/upload/v1770211996/f7fauzgsp70ge4p4krrm.jpg"
+        ],
+        "location": {
+          "latitude": 53.47947197287115,
+          "longitude": -2.241806066131403
+        },
+        "host_id": "google-walidomran72"
+      }
+    }
+  ]
 }

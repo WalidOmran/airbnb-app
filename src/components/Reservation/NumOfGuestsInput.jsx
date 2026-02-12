@@ -1,40 +1,53 @@
 import { ReservationActions } from '@/constants/reservationConstants';
 import { useReservation } from '@/context/ReservationContext';
-import {  UsersIcon } from '@heroicons/react/24/solid';
-const NumOfGuestsInput = ({property}) => {
-      const {reservationData, reservationDispatch , calcTotalPrice} = useReservation();
+import { PlusIcon, MinusIcon, UsersIcon } from '@heroicons/react/24/outline';
 
-      const handleGuestsChange = (e) => {
-            const guestsNum = Number(e.target.value);
-            reservationDispatch({ type: ReservationActions.SET_GUEST_NUM, payload: guestsNum });
-            const totalPrice =  calcTotalPrice(property.price_per_night , guestsNum , reservationData.nights);
-            reservationDispatch({type: ReservationActions.SET_TOTAL_PRICE , payload: Number(totalPrice) });
-            
-      }
-      return (
-        <div className='flex items-center justify-between md:mb-8 md:mx-8 lg:mx-8 pb-1 relative  '>
-              <label htmlFor="numOfGuests" className=' text-sm lg:text-base text-gray-700' >Guests</label>
-                <div className='flex items-center gap-1'>
-                        <UsersIcon className='h-7 ml-10 md:ml-10' />
-                        <input 
-                              type="number"
-                              name="numOfGuests" 
-                              id='numOfGuests'
-                              value={reservationData.guests}
-                              max={property.max_guests}
-                              min={1}
-                              className='block w-12 py-1 px-2 text-sm text-center border border-gray-300 rounded outline-none focus:border-teal-500'
-                              onChange={ (e) =>  handleGuestsChange(e)}
-                              aria-label="Number of guests"
-                              aria-describedby="max-guests-hint"
-                        />
-                  <span className="text-xs text-gray-500" id="max-guests-hint">
-                        (max: {property.max_guests})
-                  </span>
-                </div>
+const NumOfGuestsInput = ({ property }) => {
+  const { reservationData, reservationDispatch, calcTotalPrice } = useReservation();
+
+  const updateGuests = (newValue) => {
+    if (newValue < 1 || newValue > property.max_guests) return;
+    reservationDispatch({ type: ReservationActions.SET_GUEST_NUM, payload: newValue });
+    const totalPrice = calcTotalPrice(property.price_per_night, newValue, reservationData.nights);
+    reservationDispatch({ type: ReservationActions.SET_TOTAL_PRICE, payload: Number(totalPrice) });
+  };
+
+  return (
+    <div className='flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100'>
+      <div className="flex items-center gap-3">
+        <div className="p-2 bg-white rounded-lg shadow-sm">
+          <UsersIcon className='h-5 w-5 text-gray-600' />
+        </div>
+        <div>
+          <p className='text-sm font-bold text-gray-800'>Guests</p>
+          <p className='text-xs text-gray-500'>Max: {property.max_guests} people</p>
+        </div>
       </div>
-      
-      )
-    }
 
-export default NumOfGuestsInput
+      <div className='flex items-center gap-4 bg-white p-1 rounded-lg border border-gray-200 shadow-sm'>
+       
+        <button 
+          onClick={() => updateGuests(reservationData.guests - 1)}
+          disabled={reservationData?.guests <= 1}
+          className="p-1 hover:bg-gray-100 rounded disabled:opacity-30 transition-colors"
+        >
+          <MinusIcon className="h-5 w-5 text-gray-700" />
+        </button>
+
+        <span className='w-4 text-center font-semibold text-gray-800 tabular-nums'>
+          {reservationData.guests}
+        </span>
+
+        <button 
+          onClick={() => updateGuests(reservationData?.guests + 1)}
+          disabled={reservationData?.guests >= property.max_guests}
+          className="p-1 hover:bg-gray-100 rounded disabled:opacity-30 transition-colors"
+        >
+          <PlusIcon className="h-5 w-5 text-gray-700" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default NumOfGuestsInput;

@@ -1,31 +1,8 @@
 import logger from "@/utils/logger";
+import axios from 'axios';
 
 export const apiRequest = async (urlPath, options={}) => {
     const method = options.method || 'GET';
-
-
-    // if( typeof window === 'undefined' && String(urlPath).startsWith('/api/proxy') && method === 'GET') {
-    //     try {
-    //         const fs = await import('fs/promises');
-    //         const path = await import('path');
-    //         const dbPath = path.join(process.cwd(), 'src', 'FakeDB', 'db.json');
-    //         const file = await fs.readFile(dbPath, 'utf-8');
-    //         const json = JSON.parse(file);
-      
-    //         // منطق استخراج البيانات من الـ JSON (نفس كودك السابق)
-    //         if (urlPath.includes('/properties')) {
-    //           const id = urlPath.split('/').pop();
-    //           if (id && id !== 'properties') {
-    //             return (json.properties || []).find(p => String(p.id) === String(id)) || null;
-    //           }
-    //           return json.properties || [];
-    //         }
-    //         // يمكنك إضافة باقي المسارات هنا (cities, favorites...)
-    //       } catch (e) {
-    //         console.error('FakeDB fallback failed:', e);
-    //       }
-        
-    // }
 
     try {
         const defaultOptions = {
@@ -44,11 +21,45 @@ export const apiRequest = async (urlPath, options={}) => {
         const res = await fetch(urlPath, defaultOptions);
 
         if( res.status === 204 ) return true;
-        if(!res.ok) return null;
+
+        if (!res.ok) {
+            const errorData = await res.json().catch(() => ({}));
+            throw new Error(errorData.message || `HTTP error! status: ${res.status}`);
+        }
+
 
         return await res.json();
     } catch (error) {
         logger.error(`Error during ${method} request to ${urlPath}:`, error);
-        return null;
+        throw error;
     }
 }
+
+
+export const apiRequestByAxios = async (urlPath, config = {}, throwOnError = false) => {
+    const method = config.method || 'get';
+    
+  try {
+    const res = await axios({
+        url: urlPath,
+        method : method.toLowerCase(),
+        ...config
+    });
+    return res.data;
+
+
+  } catch (error) {
+    const status = error?.response?.status ?? null;
+    const errorMessage = error?.response?.data?.message || error.message;
+
+    logger.error(`apiRequestByAxios Error [${status}]: `, error);
+    if (throwOnError) {
+        const customError = new Error(errorMessage);
+        customError.status = status;
+
+        throw customError;
+
+        };
+    return {data: null,  status, error: errorMessage };
+  }
+};

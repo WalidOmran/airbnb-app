@@ -6,29 +6,17 @@ const AvailabilityIndicator = ({ bookings, disabledDates }) => {
   const nextAvailableDate = findNextAvailableDate(disabledDates);
   
   return (
-    <div className="mb-4 space-y-2">
-      <div className="grid grid-cols-2 gap-3">
-        <div className="bg-green-50 border border-green-200 rounded-lg p-3">
-          <p className="text-xs text-green-600 font-medium">Next Available</p>
-          <p className="text-lg font-bold text-green-700">
-            {format(nextAvailableDate, 'MMM dd, yyyy')}
-          </p>
+    <div className='w-full'>
+      <div className="flex items-center justify-between mb-4 px-1">
+        <div className="flex flex-col">
+          <span className="text-xs text-gray-400 uppercase font-bold tracking-wider">Availability</span>
+          <span className="text-sm font-semibold text-green-600">
+            Next: {format(nextAvailableDate, 'MMM dd')}
+          </span>
         </div>
-        
-        <div className="bg-red-50 border border-red-200 rounded-lg p-3">
-          <p className="text-xs text-red-600 font-medium">Booked Days</p>
-          <p className="text-lg font-bold text-red-700">
-            {totalBookedDays} {totalBookedDays === 1 ? 'day' : 'days'}
-          </p>
+        <div className="bg-red-50 px-3 py-1 rounded-full border border-red-100">
+          <span className="text-[11px] font-bold text-red-600">{totalBookedDays} Days Booked</span>
         </div>
-      </div>
-
-      
-      <div className="p-3 bg-blue-50 border border-blue-200 rounded-lg">
-        <p className="text-sm text-blue-800">
-          💡 <strong>Tip:</strong> Red dates with strikethrough are already booked. 
-          Green dates are available for your reservation.
-        </p>
       </div>
     </div>
   );

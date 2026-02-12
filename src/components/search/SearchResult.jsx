@@ -5,9 +5,7 @@ import ResultList from './ResultList'
 
 const SearchResult = ({cityId}) => {
   return (
-    <ReactQueryProvider>
         <ResultList cityId={cityId} />
-    </ReactQueryProvider>
   )
 }
 

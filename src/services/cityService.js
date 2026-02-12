@@ -1,5 +1,5 @@
 import { BASE_URL} from "@/utils/utils";
-import { getData } from "@/data/getData";
+
 import { apiRequest } from "@/app/lib/apiClient";
 
 export const cityService = {

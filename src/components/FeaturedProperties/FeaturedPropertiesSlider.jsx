@@ -5,6 +5,7 @@ import 'swiper/css';
 import FeaturedPropertiesCard from './FeaturedPropertiesCard';
 import { useState } from 'react';
 import './FeaturedPropertiesSlider.css';
+import PropertyCard from '../property/card/PropertyCard';
 
 const FeaturedPropertiesSlider = ({properties }) => {
     const safeProps = properties || [];
@@ -49,7 +50,11 @@ const FeaturedPropertiesSlider = ({properties }) => {
                  
                             safeProps.map((item) => (
                                 <SwiperSlide key={item.id}>
-                                    <FeaturedPropertiesCard item={item} totalSlides={totalSlides} />
+                                    <div role="group" aria-roledescription="slide" aria-label={`slide ${item.id} of ${totalSlides}`} tabIndex={0}>
+                                        <PropertyCard  key={item.id} item={item} variant="grid" />
+                                    </div>
+                                    {/* <FeaturedPropertiesCard item={item} totalSlides={totalSlides} /> */}
+                                    
                                 </SwiperSlide> 
                             ))
                             :

@@ -1,10 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/footer/Footer";
-import { FavoritesContextProvider } from "@/context/FavoritesContext";
-import { ReservationContextProvider } from "@/context/ReservationContext";
+
 import Providers from "./Providers";
-import { Toaster } from 'sonner';  
+import Footer from "@/components/footer/Footer";
+import Header from "@/components/header/Header";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,15 +27,16 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning >
-        <Providers>
-        <FavoritesContextProvider>
-          <ReservationContextProvider >
-             {children}
-          </ReservationContextProvider>
-          <Toaster position="bottom-center" />
-          <Footer/>
-        </FavoritesContextProvider>
-        </Providers>
+            <Providers>
+                {/* <Header /> */}
+                  {/* <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start"> */}
+                  
+                      {children}
+                    
+                  {/* </main> */}
+                
+                <Footer />
+              </Providers>
       </body>
     </html>
   );

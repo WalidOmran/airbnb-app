@@ -10,6 +10,7 @@ const getDataForClient = async (urlPath, config = {}, throwOnError = false) => {
     const res = await axios.get(urlPath, config);
     const status = res.status;
     const data = res.data;
+    
 
     return { data, status, error: null };
   } catch (error) {

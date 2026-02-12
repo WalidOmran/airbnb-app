@@ -23,7 +23,7 @@ export const reservationReducer = (state, action) => {
         case ReservationActions.SET_TOTAL_PRICE:
           return {...state, totalPrice: action.payload};
         case ReservationActions.RESET_RESERVATION:
-          return { ...initialReservationData };
+          return {...state , ...initialReservationData   };
           
           default:
             return state

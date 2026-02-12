@@ -1,45 +1,18 @@
 'use client';
-import { initialReservationData } from "@/constants/reservationConstants";
-import { reservationReducer } from "@/reducers/reservationReducer";
-import { createContext , useContext , useReducer } from "react";
+import { useReservationLogic } from "@/customHooks/useReservationLogic";
+import { createContext , useContext } from "react";
 
 
 const ReservationContext = createContext(null);
 
 
 export const ReservationContextProvider = ({children}) => {
-    const [reservationData, reservationDispatch] =  useReducer(reservationReducer, initialReservationData);
-    /**
-     * Calculates the number of nights between two dates.
-     * @param {Date} startDate - The start date of the reservation.
-     * @param {Date} endDate - The end date of the reservation.
-     * @returns {number} Number of nights.
-     */
-    const calcNights = (startDate, endDate) => { 
-      return Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
-    }
-
-    /**
-     * Calculates the total price for the reservation.
-     * @param {number} pricePerNight - Price per night for the property.
-     * @param {number} guests - Number of guests.
-     * @param {number} nights - Number of nights.
-     * @returns {number} Total price.
-     */
-
-    const calcTotalPrice = (pricePerNight,guests,nights) => {
-      return pricePerNight * guests * nights;
-    }
+    const logic = useReservationLogic();
+   
 
 
     return (
-        <ReservationContext.Provider value={
-            {
-                reservationData , 
-                reservationDispatch ,
-                calcNights ,
-                calcTotalPrice
-            }} >
+        <ReservationContext.Provider value={{...logic}} >
             {children}
         </ReservationContext.Provider>
     )

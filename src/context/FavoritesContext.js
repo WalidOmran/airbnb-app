@@ -13,6 +13,7 @@ const FavoritesContext = createContext({});
 
 export const FavoritesContextProvider = ({children}) => {
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [favoritesState,favoritesDispatch ] = useReducer(favoritesReducer,initialFavoritesState);
     const { data: session } = useSession();
     const userId = session?.user?.id;

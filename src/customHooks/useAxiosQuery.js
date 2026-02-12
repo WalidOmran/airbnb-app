@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useCallback } from "react";
 
 const useAxiosQuery = (urlPath) => {
- 
+    
      const fetchData = useCallback(async () => {
             const res = await getDataForClient(urlPath);
             return res?.data ?? [];

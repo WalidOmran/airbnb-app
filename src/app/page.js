@@ -6,11 +6,12 @@ import HeroSection from "@/components/HeroSection/HeroSection";
 import FeaturedProperties from "@/components/FeaturedProperties/FeaturedProperties";
 import PropertiesLoading from "@/components/FeaturedProperties/PropertiesLoading";
 export const fetchCache = 'force-no-store';
-export const dynamic = 'force-dynamic'; 
+// export const dynamic = 'force-dynamic'; 
 export const metadata = {
   title : 'Home',
   description: 'This is Home page for my app',
 }
+export const dynamic = "force-dynamic";
 export default async function Home() {
   
   return (
